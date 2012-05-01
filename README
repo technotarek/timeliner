@@ -1,5 +1,5 @@
 ### OVERVIEW ###
-Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are (1) its simplicity, (2) an ability to handle nearly any form of content, and (3) its printer friendly markup. There's plenty of room for you to get creative with the styling too.
+Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are (1) its simplicity, (2) an ability to handle nearly any form of content, and (3) its printer friendly markup. There's plenty of room for you to get creative with the styling too. (Please drop me a line if you do do something cool with it.)
 
 Other, more complex timeline plugins are available. If your needs are far greater than those provided here, consider one of the following:
 https://github.com/VeriteCo/Timeline
@@ -12,19 +12,21 @@ http://timeglider.com/jquery/
 -Optional: Jack Moore's ColorBox jQuery plugin
 
 ### USAGE ###
-1. Wrap your timeline in an element with an ID of timelineContainer (e.g., <div id="timelineContainer">)
+1. Include screen.css and timeline.js.
 
-2. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timelineMajor (e.g., <div class="timelineMajor">)
+2. Wrap your timeline in an element with an ID of timelineContainer (e.g., <div id="timelineContainer">)
 
-3. Wrap the major markers in an element with a class of 'timelineMajorMarker' (e.g., <h2 class="timelineMajorMarker">1954</h2>)
+3. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timelineMajor (e.g., <div class="timelineMajor">)
 
-4. Separate the individual events into DL elements with a class of timelineMinor (e.g., <dl class="timelineMinor">)
+4. Wrap the major markers in an element with a class of 'timelineMajorMarker' (e.g., <h2 class="timelineMajorMarker">1954</h2>)
 
-5. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID (e.g., <dt id="19540517"><a>Brown vs Board of Education</a></dt>)
+5. Separate the individual events into DL elements with a class of timelineMinor (e.g., <dl class="timelineMinor">)
 
-6. Wrap the (hidden) content of each event in a DL tag; give each DL an ID based on the DT with 'EX' appended, a class of 'timeline', and set the display to 'none' (e.g., <dd class="timelineEvent" id="19540517EX" style="display: none; ">)
+6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID (e.g., <dt id="19540517"><a>Brown vs Board of Education</a></dt>)
 
-7. Optional: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
+7. Wrap the (hidden) content of each event in a DL tag; give each DL an ID based on the DT with 'EX' appended, a class of 'timeline', and set the display to 'none' (e.g., <dd class="timelineEvent" id="19540517EX" style="display: none; ">)
+
+8. Optional: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
 
 <div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
 
