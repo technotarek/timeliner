@@ -22,6 +22,22 @@ Build an interactive, historical timeline with simple HTML, CSS, and jQuery
 
 <div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
 
+### SAMPLE ###
+
+A timeline with only one major marker and one event would look like this:
+
+	<div id="timelineContainer">
+		<div class="timelineMajor">
+			<h2 class="timelineMajorMarker">Major Marker</h2>
+			<dl class="timelineMinor">
+				<dt id="event01"><a>Event</a></dt>
+				<dd class="timelineEvent" id="event01EX" style="display: none; ">
+					<p>Content about the event goes here.</p>
+				</dd><!-- /.timelineEvent -->
+			</dl><!-- /.timelineMinor -->
+		</div><!-- /.timelineMajor -->
+	</div><!-- /#timelineContainer -->
+
 ### DEMO ###
 http://www.technotarek.com/timeliner/timeline.html
 
