@@ -12,9 +12,9 @@ http://timeglider.com/jquery/
 -Optional: Jack Moore's ColorBox jQuery plugin
 
 ### USAGE ###
-1. Include screen.css and timeline.js.
+1. Include screen.css and timeliner.js (or timeliner.min.js).
 
-2. Wrap your timeline in an element with an ID of timelineContainer (e.g., <div id="timelineContainer">)
+2. Wrap your timeline in an element with an ID of timelineContainer (e.g., <div id="timelineContainer">); You can set your own container using the plugin's options
 
 3. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timelineMajor (e.g., <div class="timelineMajor">)
 
@@ -26,7 +26,19 @@ http://timeglider.com/jquery/
 
 7. Wrap the (hidden) content of each event in a DL tag; give each DL an ID based on the DT with 'EX' appended, a class of 'timeline', and set the display to 'none' (e.g., <dd class="timelineEvent" id="19540517EX" style="display: none; ">)
 
-8. Optional: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
+8. Instantiate:
+
+	$.timeliner();
+
+Or, with instantiate with options:
+
+	$.timeliner({
+		timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
+		startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded
+		baseSpeed: 200 // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
+	});
+
+9. Optional: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
 
 <div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
 

@@ -39,8 +39,8 @@
 						<h3>August 28, 1955</h3>
 
 						<div class="media">			
-							<a href="#inline-1955-08-282" class="CBmodal cboxElement"><img src="images/0.jpg" width="240" height="180" alt="Related Video: The Emmett Till Murder"></a>
-							<p class="mediaLink"><a href="#inline-1955-08-282" rel="prettyPhoto" title="Related Video: The Emmett Till Murder">Watch: The Emmett Till Murder</a></p>
+							<a href="#inline-1955-08-282" class="CBmodal"><img src="http://img.youtube.com/vi/GU1wuqyOP98/0.jpg" width="240" height="180" alt="Related Video: The Emmett Till Murder"></a>
+							<p class="mediaLink"><a href="#inline-1955-08-282" class="CBmodal" title="Related Video: The Emmett Till Murder">Watch: The Emmett Till Murder</a></p>
 							<div style="display:none">
 								<div id="inline-1955-08-282" class="modalBox">
 									<object>
@@ -81,8 +81,8 @@
 						<h3>September 4, 1957</h3>
 
 						<div class="media">			
-							<a href="#inline-1957-09-044" class="CBmodal cboxElement"><img src="images/0(1).jpg" width="240" height="180" alt="Related Video: Reporting Little Rock"></a>
-							<p class="mediaLink"><a href="#inline-1957-09-044" rel="prettyPhoto" title="Related Video: Reporting Little Rock">Watch: Reporting Little Rock</a></p>
+							<a href="#inline-1957-09-044" class="CBmodal"><img src="http://img.youtube.com/vi/h148GEIgUeA/0.jpg" width="240" height="180" alt="Related Video: Reporting Little Rock"></a>
+							<p class="mediaLink"><a href="#inline-1957-09-044" class="CBmodal" title="Related Video: Reporting Little Rock">Watch: Reporting Little Rock</a></p>
 							<div style="display:none">
 								<div id="inline-1957-09-044" class="modalBox">
 									<object>
@@ -111,8 +111,8 @@
 						<h3>May 4, 1961</h3>
 
 						<div class="media">			
-							<a href="#inline-1961-05-045" class="CBmodal cboxElement"><img src="images/0(2).jpg" width="240" height="180" alt="Related Video: Freedom Rides"></a>
-							<p class="mediaLink"><a href="#inline-1961-05-045" rel="prettyPhoto" title="Related Video: Freedom Rides">Watch: Freedom Rides</a></p>
+							<a href="#inline-1961-05-045" class="CBmodal"><img src="http://img.youtube.com/vi/Sxe9dJoZ-AQ/0.jpg" width="240" height="180" alt="Related Video: Freedom Rides"></a>
+							<p class="mediaLink"><a href="#inline-1961-05-045" class="CBmodal" title="Related Video: Freedom Rides">Watch: Freedom Rides</a></p>
 							<div style="display:none">
 								<div id="inline-1961-05-045" class="modalBox">
 									<object>
@@ -139,8 +139,8 @@
 					<dd class="timelineEvent" id="19630828EX" style="display: none; ">
 						<h3>August 28, 1963</h3>
 						<div class="media">			
-							<a href="#inline-1963-08-287" class="CBmodal cboxElement"><img src="images/0(3).jpg" width="240" height="180" alt="Related Video: Black Press"></a>
-							<p class="mediaLink"><a href="#inline-1963-08-287" rel="prettyPhoto" title="Related Video: Black Press">Watch: Black Press</a></p>
+							<a href="#inline-1963-08-287" class="CBmodal"><img src="http://img.youtube.com/vi/gvAQE66jwcg/0.jpg" width="240" height="180" alt="Related Video: Black Press"></a>
+							<p class="mediaLink"><a href="#inline-1963-08-287" class="CBmodal" title="Related Video: Black Press">Watch: Black Press</a></p>
 							<div style="display:none">
 								<div id="inline-1963-08-287" class="modalBox">
 									<object>
@@ -194,11 +194,12 @@
 	<!-- GLOBAL CORE SCRIPTS -->
 	<script src="js/jquery.min.js"></script> 
 	<script type="text/javascript" src="inc/colorbox.js"></script>
-	<script type="text/javascript" src="js/timeline.min.js"></script>
+	<script type="text/javascript" src="js/timeliner.min.js"></script>
 	<script>
 		$(document).ready(function() {	
-		// Colorbox Modal
-		$(".CBmodal").colorbox({inline:true, initialWidth:100, maxWidth:682, initialHeight:100, transition:"elastic",speed:750});
+			$.timeliner();
+			// Colorbox Modal
+			$(".CBmodal").colorbox({inline:true, initialWidth:100, maxWidth:682, initialHeight:100, transition:"elastic",speed:750});
 		});
 	</script>
 
