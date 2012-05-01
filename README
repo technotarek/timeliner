@@ -3,10 +3,33 @@ Build an interactive, historical timeline with simple HTML, CSS, and jQuery
 
 ### REQUIREMENTS ###
 -jQuery
+-Optional: Jack Moore's ColorBox jQuery plugin
 
 ### USAGE ###
+1. Wrap your timeline in an element with an ID of timelineContainer (e.g., <div id="timelineContainer">)
+
+2. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timelineMajor (e.g., <div class="timelineMajor">)
+
+3. Wrap the major markers in an element with a class of 'timelineMajorMarker' (e.g., <h2 class="timelineMajorMarker">1954</h2>)
+
+4. Separate the individual events into DL elements with a class of timelineMinor (e.g., <dl class="timelineMinor">)
+
+5. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID (e.g., <dt id="19540517"><a>Brown vs Board of Education</a></dt>)
+
+6. Wrap the (hidden) content of each event in a DL tag; give each DL an ID based on the DT with 'EX' appended, a class of 'timeline', and set the display to 'none' (e.g., <dd class="timelineEvent" id="19540517EX" style="display: none; ">)
+
+7. Optional: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
+
+<div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
 
 ### DEMO ###
 http://www.technotarek.com/timeliner/timeline.html
 
+### ADDITIIONAL EXAMPLES ###
+http://www.ncld-youth.info/index.php?id=61
+http://www.investigatingpower.org/timelines/mccarthyism/
+
 ### CREDITS ###
+The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
+
+The repo is packaged with a version of Jack Moore's ColorBox jQuery plugin (http://www.jacklmoore.com/colorbox). It is for demonstration purposes only. See https://github.com/jackmoore/colorbox for support.

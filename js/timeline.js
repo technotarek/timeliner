@@ -36,8 +36,8 @@ $(document).ready(function() {
 
 	});
 
-	// Single Year
-	$(".timelineMajor h2").toggle(function()
+	// Single Major Marker
+	$(".timelineMajorMarker").toggle(function()
 	{
 		// reset all animations
 		$(this).parents(".timelineMajor").find("dt a","dl.timelineMinor")
@@ -56,7 +56,7 @@ $(document).ready(function() {
 		$(this).parents(".timelineMajor").find(".timelineEvent").hide(800);
 	});
 
-	// All Years/Events
+	// All Markers/Events
 	$(".expandAll").toggle(function()
 	{
 		// reset all animations
