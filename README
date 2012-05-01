@@ -1,5 +1,5 @@
 ### OVERVIEW ###
-Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are (1) its simplicity, (2) an ability to handle nearly any form of content, and (3) its printer friendly markup. There's plenty of room for you to get creative with the styling too. (Please drop me a line if you do do something cool with it.)
+Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) fully accessible and 508 compliant (an original requirement) (2) simple, (3) able to handle nearly any form of content, and (4) printer friendly. There's also plenty of room for you to get creative with the styling. (Please drop me a line if you do do something cool with it.)
 
 Other, more complex timeline plugins are available. If your needs are far greater than those provided here, consider one of the following:
 https://github.com/VeriteCo/Timeline
