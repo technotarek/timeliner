@@ -69,3 +69,6 @@ http://www.investigatingpower.org/timelines/mccarthyism/
 The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
 
 The repo is packaged with a version of Jack Moore's ColorBox jQuery plugin (http://www.jacklmoore.com/colorbox). It is for demonstration purposes only. See https://github.com/jackmoore/colorbox for support.
+
+### LICENSE ###
+Timeliner by Tarek Anandan is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. Really all that's important to me is that you try to let me know if you implement it somewhere so I can take a peek.
