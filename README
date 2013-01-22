@@ -39,7 +39,7 @@ Or, with instantiate with options:
 		baseSpeed: 200 // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
 	});
 
-9. Options: Most options are self explanatory based on example above. For the startOpen option, either leave it blank or provide the ID of a specific timelineEvent such as "#event01EX". This will set that timelineEvent to open by default. See the <a href="http://www.technotarek.com/timeliner/timeliner.html">demo</a> for a working example. (Timeliner supports only one item to open by default at this time.)
+9. Options: Most options are self explanatory based on example above. For the startOpen option, either leave it blank or provide the ID of a specific timelineEvent such as "#event01EX". This will set that timelineEvent to open by default. See the demo at  http://www.technotarek.com/timeliner/timeliner.html for a working example. (Timeliner supports only one item to open by default at this time.)
 
 10. Additional Options: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
 
