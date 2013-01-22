@@ -35,10 +35,13 @@ Or, with instantiate with options:
 	$.timeliner({
 		timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
 		startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded
+		startOpen: '', // value: selector ID of single timelineEvent, default to empty; determines the minor event that you want to display open by default on page load
 		baseSpeed: 200 // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
 	});
 
-9. Optional: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
+9. Options: Most options are self explanatory based on example above. For the startOpen option, either leave it blank or provide the ID of a specific timelineEvent such as "#event01EX". This will set that timelineEvent to open by default. See the <a href="http://www.technotarek.com/timeliner/timeliner.html">demo</a> for a working example. (Timeliner supports only one item to open by default at this time.)
+
+10. Additional Options: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
 
 <div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
 

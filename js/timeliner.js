@@ -5,20 +5,30 @@
 */
 ;(function($) {
 
+	var settings;
 	$.timeliner = function(options){
 	// default plugin settings
 	settings = jQuery.extend({
 		timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
-		startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded 
+		startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded
+		startOpen: '', // value: selector ID of single timelineEvent, default to empty; determines the minor event that you want to display open by default on page load
 		baseSpeed: 200 // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
 	}, options);
 
 		$(document).ready(function() {
 
 			// If startState option is set to closed, hide all the events; else, show fully expanded upon load
-			if(settings.startState=='closed')
+			if(settings.startState==='closed')
 			{
+				// Close all items
 				$(".timelineEvent").hide();
+				// Open startOpen event
+				$(settings.startOpen).parent(".timelineMinor").find("dt a")
+					.removeClass('closed')
+					.addClass('open')
+					.animate({ fontSize: "1.2em" }, settings.baseSpeed);
+				$(settings.startOpen).show(4*settings.baseSpeed);
+
 			}else{
 				$(".timelineMinor dt, .timelineMinor dt a")
 					.addClass('open')
