@@ -78,6 +78,21 @@ http://www.technotarek.com/timeliner/timeliner.html
 http://www.investigatingpower.org/timelines/mccarthyism/
 http://www.ncld-youth.info/index.php?id=61
 
+### CHANGELOG ###
+
+v1.3
+Major js code simplification and optimization
+
+v1.2
+Added in additional instantiation options
+Fixed startOpen bug
+
+v1.1
+Added startOpen option
+
+v1.0
+First release
+
 ### CREDITS ###
 The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
 
