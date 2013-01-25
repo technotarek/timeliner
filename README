@@ -36,7 +36,11 @@ Or, with instantiate with options:
 		timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
 		startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded
 		startOpen: '', // value: selector ID of single timelineEvent, default to empty; determines the minor event that you want to display open by default on page load
-		baseSpeed: 200 // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
+		baseSpeed: 200, // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
+		speed: 4, // value: numeric, defalut to 4; a multiplier applied to the base speed that sets the speed at which an event's conents are displayed and hidden
+		fontOpen: '1.2em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is opened
+		fontClosed: '1em' // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is closed
+
 	});
 
 9. Options: Most options are self explanatory based on example above. For the startOpen option, either leave it blank or provide the ID of a specific timelineEvent such as "#event01EX". This will set that timelineEvent to open by default. See the demo at  http://www.technotarek.com/timeliner/timeliner.html for a working example. (Timeliner supports only one item to open by default at this time.)
@@ -47,7 +51,7 @@ Or, with instantiate with options:
 
 ### SAMPLE ###
 
-A timeline with only one major marker and one event would look like this:
+A timeline with only one major marker and two events would look like this:
 
 	<div id="timelineContainer">
 		<div class="timelineMajor">
@@ -58,6 +62,12 @@ A timeline with only one major marker and one event would look like this:
 					<p>Content about the event goes here.</p>
 				</dd><!-- /.timelineEvent -->
 			</dl><!-- /.timelineMinor -->
+			<dl class="timelineMinor">
+				<dt id="event02"><a>Another Event</a></dt>
+				<dd class="timelineEvent" id="event02EX" style="display: none; ">
+					<p>Content about the other event.</p>
+				</dd><!-- /.timelineEvent -->
+			</dl><!-- /.timelineMinor -->
 		</div><!-- /.timelineMajor -->
 	</div><!-- /#timelineContainer -->
 
@@ -65,8 +75,8 @@ A timeline with only one major marker and one event would look like this:
 http://www.technotarek.com/timeliner/timeliner.html
 
 ### ADDITIIONAL EXAMPLES ###
-http://www.ncld-youth.info/index.php?id=61
 http://www.investigatingpower.org/timelines/mccarthyism/
+http://www.ncld-youth.info/index.php?id=61
 
 ### CREDITS ###
 The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
