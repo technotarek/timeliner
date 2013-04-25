@@ -15,7 +15,9 @@
 			baseSpeed: 200, // value: numeric, default to 200; sets the base speed for animation of the event marker
 			speed: 4, // value: numeric, defalut to 4; a multiplier applied to the base speed that sets the speed at which an event's conents are displayed and hidden
 			fontOpen: '1.2em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is opened
-			fontClosed: '1em' // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is closed
+			fontClosed: '1em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is closed
+			expandAllText: '+ expand all', // value: string, sets the text of the expandAll selector after the timeline is fully collapsed
+			collapseAllText: '- collapse all' // // value: string, sets the text of the expandAll selector after the timeline is fully expanded
 		}, options);
 
 		$(document).ready(function() {
@@ -100,12 +102,12 @@
 				{
 					
 					closeEvent($(this).parents(settings.timelineContainer).find("dt a","dl.timelineMinor"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
-					$(this).removeClass('expanded').html("+ expand all");
+					$(this).removeClass('expanded').html(settings.expandAllText);
 					
 				} else{
 					
 					openEvent($(this).parents(settings.timelineContainer).find("dt a","dl.timelineMinor"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
-					$(this).addClass('expanded').html("- collapse all");
+					$(this).addClass('expanded').html(settings.collapseAllText);
 					
 				}
 			});
