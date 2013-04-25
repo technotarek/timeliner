@@ -94,18 +94,20 @@
 			});
 
 			// All Markers/Events
-			$(".expandAll").toggle(function()
+			$(".expandAll").click(function()
 			{
-
-				openEvent($(this).parents(settings.timelineContainer).find("dt a","dl.timelineMinor"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
-				$(this).html("- collapse all");
-
-			},function()
-			{
-
-				closeEvent($(this).parents(settings.timelineContainer).find("dl.timelineMinor a"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
-				$(this).html("+ expand all");
-
+				if($(this).hasClass('expanded'))
+				{
+					
+					closeEvent($(this).parents(settings.timelineContainer).find("dt a","dl.timelineMinor"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
+					$(this).removeClass('expanded').html("+ expand all");
+					
+				} else{
+					
+					openEvent($(this).parents(settings.timelineContainer).find("dt a","dl.timelineMinor"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
+					$(this).addClass('expanded').html("- collapse all");
+					
+				}
 			});
 		});
 	};
