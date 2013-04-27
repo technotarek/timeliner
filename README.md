@@ -103,8 +103,8 @@ http://www.ncld-youth.info/index.php?id=61
 ### CHANGELOG
 
 ###### v1.4 (4/27/2013)
-*	Fixed jQuery 1.9 Toggle deprecation (#0d2755 via Marco129)
-*	Customization for expand/collpase all (#927fac via Marco129)
+*	Fixed jQuery 1.9 Toggle deprecation \(#0d2755 via Marco129\)
+*	Customization for expand/collpase all \(#927fac via Marco129\)
 *	Updated ColorBox plugin for jQuery 1.9
 
 ###### v1.3 (1/25/2013)
