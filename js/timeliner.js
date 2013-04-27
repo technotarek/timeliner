@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version		1.3
+* @version		1.4
 * @copyright	Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
@@ -100,15 +100,15 @@
 			{
 				if($(this).hasClass('expanded'))
 				{
-					
+
 					closeEvent($(this).parents(settings.timelineContainer).find("dt a","dl.timelineMinor"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
 					$(this).removeClass('expanded').html(settings.expandAllText);
-					
+
 				} else{
-					
+
 					openEvent($(this).parents(settings.timelineContainer).find("dt a","dl.timelineMinor"),$(this).parents(settings.timelineContainer).find(".timelineEvent"));
 					$(this).addClass('expanded').html(settings.collapseAllText);
-					
+
 				}
 			});
 		});
