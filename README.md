@@ -1,4 +1,6 @@
-# OVERVIEW
+# Timeliner
+
+## OVERVIEW
 Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) fully accessible and 508 compliant (an original requirement) (2) simple, (3) able to handle nearly any form of content, and (4) printer friendly. There's also plenty of room for you to get creative with the styling. (Please drop me a line if you do do something cool with it.)
 
 Other, more complex timeline plugins are available. If your needs are far greater than those provided here, consider one of the following:
@@ -8,23 +10,43 @@ http://timeglider.com/jquery/
 
 
 ## REQUIREMENTS
--jQuery
--Optional: Jack Moore's ColorBox jQuery plugin
+*	jQuery
+*	Optional: Jack Moore's ColorBox jQuery plugin
 
 ## USAGE
 1. Include screen.css and timeliner.js (or timeliner.min.js).
 
-2. Wrap your timeline in an element with an ID of timelineContainer (e.g., <div id="timelineContainer">); You can set your own container using the plugin's options
+2. Wrap your timeline in an element with an ID of timelineContainer. You can set your own container using the plugin's options
 
-3. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timelineMajor (e.g., <div class="timelineMajor">)
+	<div id="timelineContainer">
+		...
+	</div>
 
-4. Wrap the major markers in an element with a class of 'timelineMajorMarker' (e.g., <h2 class="timelineMajorMarker">1954</h2>)
+3. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timelineMajor
 
-5. Separate the individual events into DL elements with a class of timelineMinor (e.g., <dl class="timelineMinor">)
+	<div class="timelineMajor">
+		...
+	</div>
 
-6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID (e.g., <dt id="19540517"><a>Brown vs Board of Education</a></dt>)
+4. Wrap the major markers in an element with a class of 'timelineMajorMarker'
 
-7. Wrap the (hidden) content of each event in a DL tag; give each DL an ID based on the DT with 'EX' appended, a class of 'timeline', and set the display to 'none' (e.g., <dd class="timelineEvent" id="19540517EX" style="display: none; ">)
+	<h2 class="timelineMajorMarker">1954</h2>
+
+5. Separate the individual events into DL elements with a class of timelineMinor
+
+	<dl class="timelineMinor">
+		...
+	</dl>
+
+6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID
+
+	<dt id="19540517"><a>Brown vs Board of Education</a></dt>
+
+7. Wrap the (hidden) content of each event in a DL tag; give each DL an ID based on the DT with 'EX' appended, a class of 'timeline', and set the display to 'none'
+
+	<dd class="timelineEvent" id="19540517EX" style="display: none;">
+		...
+	</dd>
 
 8. Instantiate:
 
@@ -81,25 +103,27 @@ http://www.ncld-youth.info/index.php?id=61
 ## CHANGELOG
 
 ###### v1.4 (4/27/2013)
-Fixed jQuery 1.9 Toggle deprecation; customization for expand/collpase all; updated ColorBox plugin for jQuery 1.9
+*	Fixed jQuery 1.9 Toggle deprecation
+*	Customization for expand/collpase all
+*	Updated ColorBox plugin for jQuery 1.9
 
 ###### v1.3 (1/25/2013)
-Major js code simplification and optimization
+*	Major js code simplification and optimization
 
 ###### v1.2 (1/24/2013)
-Added in additional instantiation options
-Fixed startOpen bug
+*	Added in additional instantiation options
+*	Fixed startOpen bug
 
 ###### v1.1 (1/23/2013)
-Added startOpen option
+*	Added startOpen option
 
 ###### v1.0 (5/1/2012)
-First release
+*	First release
 
 ## CREDITS
 The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
 
 The repo is packaged with a version of Jack Moore's ColorBox jQuery plugin (http://www.jacklmoore.com/colorbox). It is for demonstration purposes only. See https://github.com/jackmoore/colorbox for support.
 
-## LICENSE
+### LICENSE
 Timeliner by Tarek Anandan is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. Really all that's important to me is that you try to let me know if you implement it somewhere so I can take a peek.
