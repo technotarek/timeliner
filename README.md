@@ -3,6 +3,9 @@
 ## Overview
 Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) fully accessible and 508 compliant (an original requirement) (2) simple, (3) able to handle nearly any form of content, and (4) printer friendly. There's also plenty of room for you to get creative with the styling. (Please drop me a line if you do do something cool with it.)
 
+## Demo
+*	http://www.technotarek.com/timeliner/timeliner.html
+
 Other, more complex timeline plugins are available. If your needs are far greater than those provided here, consider one of the following:
 
 *	https://github.com/VeriteCo/Timeline
@@ -94,9 +97,6 @@ A timeline with only one major marker and two events would look like this:
 			</dl><!-- /.timelineMinor -->
 		</div><!-- /.timelineMajor -->
 	</div><!-- /#timelineContainer -->
-
-## Demo
-*	http://www.technotarek.com/timeliner/timeliner.html
 
 ## Additional Examples
 *	http://www.investigatingpower.org/timelines/mccarthyism/
