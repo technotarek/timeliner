@@ -4,9 +4,10 @@
 Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) fully accessible and 508 compliant (an original requirement) (2) simple, (3) able to handle nearly any form of content, and (4) printer friendly. There's also plenty of room for you to get creative with the styling. (Please drop me a line if you do do something cool with it.)
 
 Other, more complex timeline plugins are available. If your needs are far greater than those provided here, consider one of the following:
-https://github.com/VeriteCo/Timeline
-http://www.csslab.cl/2011/08/18/jquery-timelinr/
-http://timeglider.com/jquery/
+
+*	https://github.com/VeriteCo/Timeline
+*	http://www.csslab.cl/2011/08/18/jquery-timelinr/
+*	http://timeglider.com/jquery/
 
 
 ### REQUIREMENTS
@@ -18,58 +19,59 @@ http://timeglider.com/jquery/
 
 2. Wrap your timeline in an element with an ID of timelineContainer. You can set your own container using the plugin's options
 
-	<div id="timelineContainer">
-		...
-	</div>
+		<div id="timelineContainer">
+			...
+		</div>
 
 3. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timelineMajor
 
-	<div class="timelineMajor">
-		...
-	</div>
+		<div class="timelineMajor">
+			...
+		</div>
 
 4. Wrap the major markers in an element with a class of 'timelineMajorMarker'
 
-	<h2 class="timelineMajorMarker">1954</h2>
+		<h2 class="timelineMajorMarker">1954</h2>
 
 5. Separate the individual events into DL elements with a class of timelineMinor
 
-	<dl class="timelineMinor">
-		...
-	</dl>
+		<dl class="timelineMinor">
+			...
+		</dl>
 
 6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID
 
-	<dt id="19540517"><a>Brown vs Board of Education</a></dt>
+		<dt id="19540517"><a>Brown vs Board of Education</a></dt>
 
 7. Wrap the (hidden) content of each event in a DL tag; give each DL an ID based on the DT with 'EX' appended, a class of 'timeline', and set the display to 'none'
 
-	<dd class="timelineEvent" id="19540517EX" style="display: none;">
-		...
-	</dd>
+		<dd class="timelineEvent" id="19540517EX" style="display: none;">
+			...
+		</dd>
 
 8. Instantiate:
 
-	$.timeliner();
+		$.timeliner();
 
-Or, with instantiate with options:
+9. Or, instantiate with options:
 
-	$.timeliner({
-		timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
-		startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded
-		startOpen: '', // value: selector ID of single timelineEvent, default to empty; determines the minor event that you want to display open by default on page load
-		baseSpeed: 200, // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
-		speed: 4, // value: numeric, defalut to 4; a multiplier applied to the base speed that sets the speed at which an event's conents are displayed and hidden
-		fontOpen: '1.2em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is opened
-		fontClosed: '1em' // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is closed
+		$.timeliner({
+			timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
+			startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded
+			startOpen: '', // value: selector ID of single timelineEvent, default to empty; determines the minor event that you want to display open by default on page load
+			baseSpeed: 200, // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
+			speed: 4, // value: numeric, defalut to 4; a multiplier applied to the base speed that sets the speed at which an event's conents are displayed and hidden
+			fontOpen: '1.2em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is opened
+			fontClosed: '1em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is closed
+			expandAllText: '+ expand all', // value: string; defaults to '+ expand all'
+			collapseAllText: '- collapse all' // value: string; defaults to '- collapse all'
+		});
 
-	});
+10. Options: Most options are self explanatory based on example above. For the startOpen option, provide the ID of a specific timelineEvent such as "#event01EX". This will set that timelineEvent to open by default. See the demo at  http://www.technotarek.com/timeliner/timeliner.html for a working example. (Timeliner supports only one item to open by default at this time.)
 
-9. Options: Most options are self explanatory based on example above. For the startOpen option, either leave it blank or provide the ID of a specific timelineEvent such as "#event01EX". This will set that timelineEvent to open by default. See the demo at  http://www.technotarek.com/timeliner/timeliner.html for a working example. (Timeliner supports only one item to open by default at this time.)
+11. Add an expand/collapse all events by adding the following inside of the main #timelineContainer. If you used the expandAll option when instantiating Timeliner, then update the value \(but not the class\) of the anchor to match:
 
-10. Additional Options: Add an expand/collapse all events by adding the following inside of the main #timelineContainer:
-
-	<div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
+		<div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
 
 ### SAMPLE
 
@@ -94,11 +96,11 @@ A timeline with only one major marker and two events would look like this:
 	</div><!-- /#timelineContainer -->
 
 ### DEMO
-http://www.technotarek.com/timeliner/timeliner.html
+*	http://www.technotarek.com/timeliner/timeliner.html
 
 ### ADDITIIONAL EXAMPLES
-http://www.investigatingpower.org/timelines/mccarthyism/
-http://www.ncld-youth.info/index.php?id=61
+*	http://www.investigatingpower.org/timelines/mccarthyism/
+*	http://www.ncld-youth.info/index.php?id=61
 
 ### CHANGELOG
 
