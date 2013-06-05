@@ -50,7 +50,7 @@
 			}else{
 
 				// Open all items
-				openEvent($(".timelineMinor dt, .timelineMinor dt a"),$(".timelineEvent"));
+				openEvent($(".timelineMinor dt a"),$(".timelineEvent"));
 
 			}
 
