@@ -105,7 +105,7 @@ A timeline with only one major marker and two events would look like this:
 ## Change Log
 
 ###### v1.5 (6/7/2013)
-*	startOpen option now accepts multiple timeline events \(via rs017991\)
+*	startOpen option now accepts multiple timeline events
 
 ###### v1.4.1 (6/7/2013)
 *	Merged in openStart-fix \(via rs017991\)
