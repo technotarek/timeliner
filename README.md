@@ -104,6 +104,9 @@ A timeline with only one major marker and two events would look like this:
 
 ## Change Log
 
+###### v1.4.1 (6/7/2013)
+*	Merged in openStart-fix \(via rs017991\)
+
 ###### v1.4 (4/27/2013)
 *	Fixed jQuery 1.9 Toggle deprecation \(#0d2755 via Marco129\)
 *	Customization for expand/collpase all \(#927fac via Marco129\)
