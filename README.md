@@ -61,7 +61,7 @@ Other, more complex timeline plugins are available. If your needs are far greate
 		$.timeliner({
 			timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
 			startState: 'closed', // value: closed | open, default to closed; determines whether the timeline is initially collapsed or fully expanded
-			startOpen: '', // value: selector ID of single timelineEvent, default to empty; determines the minor event that you want to display open by default on page load
+			startOpen: [], // value: array of IDs of single timelineEvents, default to empty; determines the minor event that you want to display open by default on page load
 			baseSpeed: 200, // value: any integer, default to 200; determines the base speed, some animations are a multiple (4x) of the base speed
 			speed: 4, // value: numeric, defalut to 4; a multiplier applied to the base speed that sets the speed at which an event's conents are displayed and hidden
 			fontOpen: '1.2em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is opened
@@ -70,7 +70,7 @@ Other, more complex timeline plugins are available. If your needs are far greate
 			collapseAllText: '- collapse all' // value: string; defaults to '- collapse all'
 		});
 
-10. Options: Most options are self explanatory based on example above. For the startOpen option, provide the ID of a specific timelineEvent such as "#event01EX". This will set that timelineEvent to open by default. See the demo at  http://www.technotarek.com/timeliner/timeliner.html for a working example. (Timeliner supports only one item to open by default at this time.)
+10. Options: Most options are self explanatory based on example above. For the startOpen option, provide an array of IDs of specific timelineEvents such as ['#event01EX'] or ['#event01EX','#event02EX']. This will set those timelineEvents to open by default. See the demo at  http://www.technotarek.com/timeliner/timeliner.html for a working example.
 
 11. Add an expand/collapse all events by adding the following inside of the main #timelineContainer. If you used the expandAll option when instantiating Timeliner, then update the value \(but not the class\) of the anchor to match:
 
@@ -103,6 +103,9 @@ A timeline with only one major marker and two events would look like this:
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Change Log
+
+###### v1.5 (6/7/2013)
+*	startOpen option now accepts multiple timeline events \(via rs017991\)
 
 ###### v1.4.1 (6/7/2013)
 *	Merged in openStart-fix \(via rs017991\)

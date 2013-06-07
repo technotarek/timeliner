@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version		1.4.1
+* @version		1.5
 * @copyright	Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
@@ -11,7 +11,7 @@
 		settings = jQuery.extend({
 			timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
 			startState: 'closed', // value: closed | open, default to closed; sets whether the timeline is initially collapsed or fully expanded
-			startOpen: '', // value: selector ID of single timelineEvent, default to empty; sets the minor event that you want to display open by default on page load
+			startOpen: [], // value: array of IDs of single timelineEvents, default to empty; sets the minor events that you want to display open by default on page load
 			baseSpeed: 200, // value: numeric, default to 200; sets the base speed for animation of the event marker
 			speed: 4, // value: numeric, defalut to 4; a multiplier applied to the base speed that sets the speed at which an event's conents are displayed and hidden
 			fontOpen: '1.2em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is opened
@@ -44,8 +44,10 @@
 				// Close all items
 				$(".timelineEvent").hide();
 
-				// show startOpen event
-				openEvent($(settings.startOpen).parent(".timelineMinor").find("dt a"),$(settings.startOpen));
+				// show startOpen events
+				$.each($(settings.startOpen), function(index, value) {
+				   openEvent($(value).parent(".timelineMinor").find("dt a"),$(value));
+				});
 
 			}else{
 
