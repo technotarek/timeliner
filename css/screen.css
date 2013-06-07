@@ -1,3 +1,5 @@
+/* ======= DEMO LAYOUT ======= */
+
 body {
 	background-color:#2f2f2f;
 	color:#eeefef;
@@ -15,17 +17,16 @@ body {
 	*zoom:1;
 }
 
+h1, h2 {  }
+
 h1 {
-	clear:left;
 	color:#7DBADF;
-	font-family:Palatino,"Times New Roman", Times, serif;
 	font-size:36px;
 	font-weight:400;
 	margin:0;
 }
 
 h2 {
-	font-family:Palatino,"Times New Roman", Times, serif;
 	font-size:22px;
 	font-weight:400;
 	margin:5px 0;
@@ -53,7 +54,6 @@ a img {
 p {
 	margin:0 0 10px 8px;
 	font-size:1.3em;
-	font-family:Arial, Helvetica, sans-serif;
 	font-weight:400;
 	line-height:1.6em;
 }
@@ -79,10 +79,9 @@ div.timelineToggle {
 }
 
 a.expandAll {
-	color:#ccc!important;
+	color:#ccc;
 	cursor:pointer;
 	background:#000;
-	border:none;
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;
 	border-radius:4px;
@@ -90,11 +89,10 @@ a.expandAll {
 	padding:3px 5px;
 }
 
-a.expandAll:hover {
-	border:none!important;
-	color:#7DBADF!important;
-	cursor:pointer;
-}
+	a.expandAll:hover {
+		color:#7DBADF;
+		cursor:pointer;
+	}
 
 div.timelineMajor {
 	clear:left;
@@ -105,18 +103,16 @@ div.timelineMajor {
 
 	.timelineMajor h2 {
 		background:url(../images/timeline_century_tick.gif) left center no-repeat;
-		color:#7097AF!important;
-		cursor: pointer;
 		font-family:Palatino,"Times New Roman", Times, serif;
-		font-size:3em!important;
-		font-weight:400!important;
-		margin:0 0 10px!important;
-		padding:4px 4px 4px 20px!important;
+		cursor: pointer;
+		font-size:3em;
+		font-weight:400;
+		margin:0 0 10px;
+		padding:4px 4px 4px 20px;
 	}
 
 	.timelineMajor h2 span {
 		background:#ccc;
-		border:none;
 		-webkit-border-radius:4px;
 		-moz-border-radius:4px;
 		border-radius:4px;
@@ -126,16 +122,11 @@ div.timelineMajor {
 		padding:3px 5px 1px;
 	}
 
-	.timelineMajor h2 a:hover {
-		border-bottom:none;
-		color:#00baff!important;
-	}
-
 dl.timelineMinor {
 	clear:left;
-	float:left!important;
-	margin:0 12px 0 0!important;
-	padding:4px 4px 4px 0!important;
+	float:left;
+	margin:0 12px 0 0;
+	padding:4px 4px 4px 0;
 	position:relative;
 	width:880px;
 }
@@ -143,11 +134,11 @@ dl.timelineMinor {
 	.timelineMinor dt {
 		background:url(../images/timeline_decade_tick.gif) left center no-repeat;
 		clear:left;
-		font-size:1.6em!important;
-		list-style-type:none!important;
+		font-size:1.6em;
+		list-style-type:none;
 		line-height:1.2em;
-		margin:0 0 12px!important;
-		padding:0 0 0 24px!important;
+		margin:0 0 12px;
+		padding:0 0 0 24px;
 		white-space:nowrap;
 	}
 
@@ -179,7 +170,7 @@ dl.timelineMinor {
 			color:#FFF;
 			clear:both;
 			float:left;
-			font-size:1.5em!important;
+			font-size:1.5em;
 			margin:0;
 			white-space:nowrap;
 		}
@@ -187,7 +178,7 @@ dl.timelineMinor {
 .timelineEvent p {
 	clear:left;
 	float:left;
-	line-height:1.5em!important;
+	line-height:1.5em;
 	margin:6px 0 10px;
 	width:500px;
 }
@@ -195,50 +186,27 @@ dl.timelineMinor {
 .timelineEvent h4 {
 	clear:left;
 	float:left;
-	font-size:1.4em!important;
+	font-size:1.4em;
 	font-weight:400;
 	margin:10px 0 0;
-	padding:0 0 0 20px!important;
+	padding:0 0 0 20px;
 }
 
 .timelineEvent blockquote {
+	border-left:2px solid #ccc;
 	clear:left;
 	float:left;
+	font-size:1.8em;
+	margin-left:0;
 	padding:0 30px;
 	width:400px;
 }
 
-.timelineEvent blockquote * {
-	float:none;
-	width:400px;
+.timelineEvent blockquote .attribution{
+	font-size:0.7em;
+	text-align: right;
 }
 
-.timelineEvent ul.moreInfo {
-	clear:left;
-	float:left;
-	line-height:1.2em;
-	list-style-type:none;
-	margin:0!important;
-	padding:0!important;
-	width:100%;
-}
-
-.timelineEvent ul.moreInfo li {
-	clear:left;
-	background:none!important;
-	font-size:1em!important;
-	line-height:1.5em;
-	margin:8px 0!important;
-	padding:0 0 0 20px!important;
-}
-
-	.timelineEvent ul.moreInfo li a:link,.timelineEvent ul.moreInfo li a:visited {
-		color:#7097af!important;
-	}
-
-	.timelineEvent ul.moreInfo li a:hover {
-		color:#7DBADF!important;
-	}
 
 .timelineEvent div.media {
 	float:right;
@@ -253,19 +221,14 @@ dl.timelineMinor {
 
 	.timelineEvent .media p {
 		font-size:1.2em;
-		margin:0!important;
-		padding:0!important;
+		margin:0;
+		padding:0;
 	}
 
 	.timelineEvent .media a:link,.timelineEvent .media a:visited {
-		border:none!important;
-		color:#ab221b!important;
+		color:#ab221b;
 	}
 
 	.timelineEvent .media a:hover {
-		color:#7DBADF!important;
-	}
-
-	.timelineEvent .media p span.source {
-		font-style:italic;
+		color:#7DBADF;
 	}
