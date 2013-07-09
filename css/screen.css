@@ -232,3 +232,106 @@ dl.timelineMinor {
 	.timelineEvent .media a:hover {
 		color:#7DBADF;
 	}
+
+@media screen and (max-width: 980px) and (min-width: 768px) {
+
+    body {
+       font-size: large;
+    }
+
+    .container {
+       width: 75%;
+    }
+
+    div.timelineToggle {
+       float:none;
+    }
+
+    .timelineEvent div.media {
+       float:none;
+       width:300px;
+    }
+
+    div#timelineContainer {
+       width:75%;
+    }
+
+    .timelineMinor dd {
+       width:75%;
+    }
+
+    .timelineEvent .media p {
+       font-size:1em;
+    }
+
+    dl.timelineMinor {
+       float:none;
+       width:75%;
+    }
+
+    .timelineEvent p {
+       float:none;
+       width:80%;
+    }
+
+    .timelineEvent blockquote {
+       float:none;
+       font-size:1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        font-size: large;
+    }
+
+    .container {
+       width: 65%;
+    }
+
+    div.timelineToggle {
+       float:none;
+    }
+
+    .timelineEvent div.media {
+       float:none;
+       width:300px;
+    }
+
+    .timelineMinor dt {
+       font-size:1.2em;
+    }
+
+    .timelineMinor dd h3 {
+       font-size:1em;
+    }
+
+    div#timelineContainer {
+       width:55%;
+    }
+
+    .timelineMinor dd {
+       width:55%;
+    }
+
+    .timelineEvent .media p {
+       font-size:1em;
+    }
+
+    dl.timelineMinor {
+       float:none;
+       width:55%;
+    }
+
+    .timelineEvent p {
+       float:none;
+       width:60%;
+    }
+
+    .timelineEvent blockquote {
+       float:none;
+       width:60%;
+       font-size:1em;
+    }
+}
