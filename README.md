@@ -18,7 +18,7 @@ Other, more complex timeline plugins are available. If your needs are far greate
 *	Optional: Jack Moore's ColorBox jQuery plugin
 
 ## Usage
-1. Include screen.css and timeliner.js (or timeliner.min.js).
+1. Include screen.css and timeliner.js (or timeliner.min.js). Optionally, include also responsive.css for basic responsive behavior on phones and mobile devices below 480px wide (iPad responsive behavior forthcoming).
 
 2. Wrap your timeline in an element with an ID of timelineContainer. You can set your own container using the plugin's options
 
@@ -103,6 +103,9 @@ A timeline with only one major marker and two events would look like this:
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Change Log
+
+###### v1.5.responsive (7/9/2013)
+*	Added basic responsive behavior for phone/mobile devices below 480px wide (supported partially by code contributed by Geus Maxime)
 
 ###### v1.5 (6/7/2013)
 *	startOpen option now accepts multiple timeline events
