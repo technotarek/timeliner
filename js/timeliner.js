@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version		1.5
+* @version		1.5.1
 * @copyright	Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
@@ -57,7 +57,7 @@
 			}
 
 			// Minor Event Click
-			$(".timelineMinor dt").click(function(){
+			$(settings.timelineContainer).on("click",".timelineMinor dt",function(){
 
 				var currentId = $(this).attr('id');
 
@@ -76,7 +76,7 @@
 			});
 
 			// Major Marker Click
-			$(".timelineMajorMarker").click(function()
+			$(settings.timelineContainer).on("click",".timelineMajorMarker",function()
 			{
 
 				// number of minor events under this major event

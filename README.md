@@ -104,8 +104,11 @@ A timeline with only one major marker and two events would look like this:
 
 ## Change Log
 
+###### v1.5.1 (10/1/2013)
+*	Changed click events to use jQuery delegated events via the .on\(\) method \(supported partially by code contributed by gkarka\)
+
 ###### v1.5.responsive (7/9/2013)
-*	Added basic responsive behavior for phone/mobile devices below 480px wide (supported partially by code contributed by Geus Maxime)
+*	Added basic responsive behavior for phone/mobile devices below 480px wide \(supported partially by code contributed by Geus Maxime\)
 
 ###### v1.5 (6/7/2013)
 *	startOpen option now accepts multiple timeline events
