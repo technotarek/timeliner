@@ -69,10 +69,11 @@
 
 
             if ($(settings.timelineContainer).data('started')) {
-                return;
+                return;                 // we already initialized this timelineContainer
             } else {
                 $(settings.timelineContainer).data('started', true);
-            }
+                $(settings.timelineContainer+" "+".expandAll").html(settings.expandAllText);
+                $(settings.timelineContainer+" "+".collapseAll").html(settings.collapseAllText);
 
 			// If startState option is set to closed, hide all the events; else, show fully expanded upon load
 			if(settings.startState==='closed')
@@ -149,5 +150,6 @@
 
 				}
 			});
+                }
 	};
 })(jQuery);
