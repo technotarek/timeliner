@@ -5,54 +5,90 @@
 */
 ;(function($) {
 
-	var settings;
-	$.timeliner = function(options){
-		// default plugin settings
-		settings = jQuery.extend({
-			timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
-			startState: 'closed', // value: closed | open, default to closed; sets whether the timeline is initially collapsed or fully expanded
-			startOpen: [], // value: array of IDs of single timelineEvents, default to empty; sets the minor events that you want to display open by default on page load
-			baseSpeed: 200, // value: numeric, default to 200; sets the base speed for animation of the event marker
-			speed: 4, // value: numeric, defalut to 4; a multiplier applied to the base speed that sets the speed at which an event's conents are displayed and hidden
-			fontOpen: '1.2em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is opened
-			fontClosed: '1em', // value: any valid CSS font-size value, defaults to 1em; sets the font size of an event after it is closed
-			expandAllText: '+ expand all', // value: string, sets the text of the expandAll selector after the timeline is fully collapsed
-			collapseAllText: '- collapse all' // // value: string, sets the text of the expandAll selector after the timeline is fully expanded
-		}, options);
+        $.timeliner = function(options) {
+            if ($.timeliners == null) {
+                $.timeliners = { options: [] };
+                $.timeliners.options.push(options);
+            }
+            else {
+                $.timeliners.options.push(options);
+            }
+            $(document).ready(function() {
+                for (var i=0; i<$.timeliners.options.length; i++) {
+                    startTimeliner($.timeliners.options[i]);
+                }
+            });
+        }
 
-		$(document).ready(function() {
+        function startTimeliner(options){
+            var settings = {
+                timelineContainer: options['timelineContainer'] || '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
+                startState: options['closed'] || 'closed', // value: closed | open,
+                // default to closed; sets whether the timeline is
+                // initially collapsed or fully expanded
+                startOpen: options['startOpen'] || [], // value: array of IDs of
+                // single timelineEvents, default to empty; sets
+                // the minor events that you want to display open
+                // by default on page load
+                baseSpeed: options['baseSpeed'] || 200, // value: numeric, default to
+                // 200; sets the base speed for animation of the
+                // event marker
+                speed: options['speed'] || 4, // value: numeric, defalut to 4; a
+                // multiplier applied to the base speed that sets
+                // the speed at which an event's conents are
+                // displayed and hidden
+                fontOpen: options['fontOpen'] || '1.2em', // value: any valid CSS
+                // font-size value, defaults to 1em; sets the font
+                // size of an event after it is opened
+                fontClosed: options['fontClosed'] || '1em', // value: any valid CSS
+                // font-size value, defaults to 1em; sets the font
+                // size of an event after it is closed
+                expandAllText: options ['expandAllText'] || '+ expand all', // value:
+                // string, sets the text of the expandAll selector
+                // after the timeline is fully collapsed
+                collapseAllText: options['collapseAllText'] || '- collapse all' // // value:
+                // string, sets the text of the expandAll selector
+                // after the timeline is fully expanded
+            };
 
-			function openEvent(eventHeading,eventBody) {
-				$(eventHeading)
-					.removeClass('closed')
-					.addClass('open')
-					.animate({ fontSize: settings.fontOpen }, settings.baseSpeed);
-				$(eventBody).show(settings.speed*settings.baseSpeed);
-			}
+            function openEvent(eventHeading,eventBody) {
+                $(eventHeading)
+                    .removeClass('closed')
+                    .addClass('open')
+                    .animate({ fontSize: settings.fontOpen }, settings.baseSpeed);
+                $(eventBody).show(settings.speed*settings.baseSpeed);
+            }
 
-			function closeEvent(eventHeading,eventBody) {
-				$(eventHeading)
-					.animate({ fontSize: settings.fontClosed }, 0)
-					.removeClass('open')
-					.addClass('closed');
-				$(eventBody).hide(settings.speed*settings.baseSpeed);
-			}
+            function closeEvent(eventHeading,eventBody) {
+                $(eventHeading)
+                    .animate({ fontSize: settings.fontClosed }, 0)
+                    .removeClass('open')
+                    .addClass('closed');
+                $(eventBody).hide(settings.speed*settings.baseSpeed);
+            }
+
+
+            if ($(settings.timelineContainer).data('started')) {
+                return;
+            } else {
+                $(settings.timelineContainer).data('started', true);
+            }
 
 			// If startState option is set to closed, hide all the events; else, show fully expanded upon load
 			if(settings.startState==='closed')
 			{
 				// Close all items
-				$(".timelineEvent").hide();
+                                $(settings.timelineContainer+" "+".timelineEvent").hide();
 
 				// show startOpen events
 				$.each($(settings.startOpen), function(index, value) {
-				   openEvent($(value).parent(".timelineMinor").find("dt a"),$(value));
+                                    openEvent($(value).parent(settings.timelineContainer+" "+".timelineMinor").find("dt a"),$(value));
 				});
 
 			}else{
 
 				// Open all items
-				openEvent($(".timelineMinor dt a"),$(".timelineEvent"));
+                                openEvent($(settings.timelineContainer+" "+".timelineMinor dt a"),$(settings.timelineContainer+" "+".timelineEvent"));
 
 			}
 
@@ -98,7 +134,7 @@
 			});
 
 			// All Markers/Events
-			$(".expandAll").click(function()
+                        $(settings.timelineContainer+" "+".expandAll").click(function()
 			{
 				if($(this).hasClass('expanded'))
 				{
@@ -113,6 +149,5 @@
 
 				}
 			});
-		});
 	};
 })(jQuery);
