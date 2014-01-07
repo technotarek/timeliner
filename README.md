@@ -1,7 +1,7 @@
 # Timeliner
 
 ## Overview
-Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) fully accessible and 508 compliant (an original requirement) (2) simple, (3) able to handle nearly any form of content, and (4) printer friendly. There's also plenty of room for you to get creative with the styling. (Please drop me a line if you do do something cool with it.)
+Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) fully accessible and 508 compliant (an original requirement) (2) simple, (3) able to handle nearly any form of content, and (4) printer friendly. There's also plenty of room for you to get creative with the styling. (Please drop me a line if you do do something cool with it.) Thanks to on-going development and contributions from the community, timeliner continues to improve. Notable enhancements include basic responsiveness for mobile devices and the ability to add multiple timelines to a single page.
 
 ## Demo
 *	http://www.technotarek.com/timeliner/timeliner.html
@@ -56,7 +56,12 @@ Other, more complex timeline plugins are available. If your needs are far greate
 
 		$.timeliner();
 
-9. Or, instantiate with options:
+9. Or, instantiate with multiple timelines:
+
+		$.timeliner({timelineContainer: '#timelineContainer_1'});
+		$.timeliner({timelineContainer: '#timelineContainer_2'});
+
+10. Or, instantiate with options. If you using multiple timelines, options can be set on each individual timeline:
 
 		$.timeliner({
 			timelineContainer: '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
@@ -103,6 +108,9 @@ A timeline with only one major marker and two events would look like this:
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Change Log
+
+###### v1.6 (1/7/2013)
+*	Merged multiple-timeline per page enhancement \(supported by luisalima\)
 
 ###### v1.5.1 (10/1/2013)
 *	Changed click events to use jQuery delegated events via the .on\(\) method \(supported partially by code contributed by gkarka\)

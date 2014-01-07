@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version		1.5.1
+* @version		1.6
 * @copyright	Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
