@@ -53,9 +53,14 @@ a img {
 
 p {
 	margin:0 0 10px 8px;
-	font-size:1.3em;
+	font-size:1.5em;
 	font-weight:400;
 	line-height:1.6em;
+}
+
+.lead {
+	font-size:2em;
+	margin-bottom:40px;
 }
 
 .clear {
@@ -66,7 +71,7 @@ p {
 
 /* ============ TIMELINE ============= */
 
-div#timelineContainer {
+.timelineContainer {
 	border-left:2px solid #ccc;
 	margin:20px auto;
 	width:900px;

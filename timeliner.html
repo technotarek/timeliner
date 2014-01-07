@@ -10,11 +10,13 @@
 <body>
 	<div class="container">
 		<h1>Timeliner</h1>
+		<p class="lead">Working examples of the timeliner.js jquery plugin by Tarek Anandan. This page features two working examples, which demonstrate several key features including expand/collapse, autostart/autoload, and multiple timelines per page.</p>
+
 		<h2>The Civil Rights Movement 1954-1964</h2>
 
 		<p>The content used in this demo is from <a href="http://www.technotarek.com/case-studies/investigating-power">InvestigatingPower.org</a>, one of two initial places where I implemented timeliner. InvestigatingPower.org features a total of five timeliner-powered timelines covering the topics of <a href="http://www.investigatingpower.org/timelines/mccarthyism/" target="_blank">McCarthyism</a>, <a href="http://www.investigatingpower.org/timelines/civil-rights/" target="_blank">Civil Rights</a>, <a href="http://www.investigatingpower.org/timelines/vietnam/" target="_blank">the Vietnam War</a>, <a href="http://www.investigatingpower.org/timelines/watergate/" target="_blank">the Watergate Scandal</a>, <a href="http://www.investigatingpower.org/timelines/corporate-power/" target="_blank">Corporate Power (Tobacco)</a>, and <a href="http://www.investigatingpower.org/timelines/9-11/" target="_blank">Post 9/11</a>.</p>
 
-		<div id="timelineContainer">
+		<div id="timelineContainer" class="timelineContainer">
 
 			<div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
 
@@ -196,6 +198,75 @@
 			</div><!-- /.timelineMajor -->
 			<br class="clear">
 		</div><!-- /#timelineContainer -->
+
+		<br>
+		<br>
+		<h2>The Development of Timeliner.js</h2>
+		<p>Your content isn't suited for a chronological presentation? No problem, get creative.</p>
+
+		<div id="timelineContainer_2" class="timelineContainer">
+
+			<div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
+
+			<br class="clear">
+
+			<div class="timelineMajor">
+				<h2 class="timelineMajorMarker"><span>Concept</span></h2>
+				<dl class="timelineMinor">
+					<dt id="born"><a>The idea is born</a></dt>
+					<dd class="timelineEvent" id="bornEX" style="display:none;">
+						<p>Two completely independent projects, one for the Institute for Educational Leadership and another for the Fund for Investigative Journalism, expressed interest in a timeline component for their website.</p>
+						<br class="clear">
+					</dd><!-- /.timelineEvent -->
+				</dl><!-- /.timelineMinor -->
+			</div><!-- /.timelineMajor -->
+
+			<div class="timelineMajor">
+				<h2 class="timelineMajorMarker"><span>Prototype</span></h2>
+				<dl class="timelineMinor">
+					<dt id="realized"><a>The idea is realized</a></dt>
+					<dd class="timelineEvent" id="realizedEX" style="display:none;">
+						<p>Jquery was heating up, so it was the perfect time to put together a working prototype. I toyed around with some variations, including some horizontal ones. Ultimately, I found the vertical version, similar to the current, the most flexible.</p>
+						<br class="clear">
+					</dd><!-- /.timelineEvent -->
+				</dl><!-- /.timelineMinor -->
+			</div><!-- /.timelineMajor -->
+
+
+			<div class="timelineMajor">
+				<h2 class="timelineMajorMarker"><span>Initial Integrations</span></h2>
+				<dl class="timelineMinor">
+					<dt id="ncld"><a>NCLD-Youth Disability History Timeline</a></dt>
+					<dd class="timelineEvent" id="ncldEX" style="display:none;">
+						<p>The initial working code was first launched at <a href="http://www.ncld-youth.info/index.php?id=61">http://www.ncld-youth.info/index.php?id=61</a>. This version actually has come features that I like that I never implmented in the final plugin (e.g,. century > decade > year/event).</p>
+						<br class="clear">
+					</dd><!-- /.timelineEvent -->
+				</dl><!-- /.timelineMinor -->
+				<dl class="timelineMinor">
+					<dt id="power"><a>Investigating Power's Moments of Truth Timelines</a></dt>
+					<dd class="timelineEvent" id="powerEX" style="display:none;">
+						<p>I really started to fine tune the code for InvestigatingPower.org. This was also the first time where all of the content was loaded via the <abbr title="content management system">CMS</abbr>, which was important given five timelines for a total of a few hundred data points.</p>
+
+							<br class="clear">
+					</dd><!-- /.timelineEvent -->
+				</dl><!-- /.timelineMinor -->
+			</div><!-- /.timelineMajor -->
+
+			<div class="timelineMajor">
+				<h2 class="timelineMajorMarker"><span>Open Sourced</span></h2>
+				<dl class="timelineMinor">
+					<dt id="github"><a>GitHub Gets the Timeliner.js Jquery Plugin</a></dt>
+					<dd class="timelineEvent" id="githubEX" style="display:none;">
+						<p>I wanted to play around with GitHub. I wanted to learn some more Jquery, in particular a bit more about creating a plugin. Done.</p>
+
+							<br class="clear">
+					</dd><!-- /.timelineEvent -->
+				</dl><!-- /.timelineMinor -->
+			</div><!-- /.timelineMajor -->
+
+			<br class="clear">
+		</div>
+
 	</div><!-- /.container -->
 
 	<div class="container">
@@ -210,6 +281,9 @@
 		$(document).ready(function() {
 			$.timeliner({
 				startOpen:['#19550828EX', '#19630828EX']
+			});
+			$.timeliner({
+				timelineContainer: '#timelineContainer_2'
 			});
 			// Colorbox Modal
 			$(".CBmodal").colorbox({inline:true, initialWidth:100, maxWidth:682, initialHeight:100, transition:"elastic",speed:750});
