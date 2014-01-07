@@ -110,10 +110,10 @@ A timeline with only one major marker and two events would look like this:
 ## Change Log
 
 ###### v1.6 (1/7/2013)
-*	Merged multiple-timeline per page enhancement \(supported by http://github.com/luisalima\)
+*	Merged multiple-timeline per page enhancement \( supported by http://github.com/luisalima \)
 
 ###### v1.5.1 (10/1/2013)
-*	Changed click events to use jQuery delegated events via the .on\(\) method \(supported partially by code contributed by http://github.com/gkarka\)
+*	Changed click events to use jQuery delegated events via the .on\(\) method \( supported partially by code contributed by http://github.com/gkarka \)
 
 ###### v1.5.responsive (7/9/2013)
 *	Added basic responsive behavior for phone/mobile devices below 480px wide \(supported partially by code contributed by Geus Maxime\)
@@ -122,11 +122,11 @@ A timeline with only one major marker and two events would look like this:
 *	startOpen option now accepts multiple timeline events
 
 ###### v1.4.1 (6/7/2013)
-*	Merged in openStart-fix \(via http://github.com/rs017991\)
+*	Merged in openStart-fix \( via http://github.com/rs017991 \)
 
 ###### v1.4 (4/27/2013)
-*	Fixed jQuery 1.9 Toggle deprecation \(#0d2755 via http://github.com/Marco129\)
-*	Customization for expand/collpase all \(#927fac via http://github.com/Marco129\)
+*	Fixed jQuery 1.9 Toggle deprecation \( #0d2755 via http://github.com/Marco129 \)
+*	Customization for expand/collpase all \( #927fac via http://github.com/Marco129 \)
 *	Updated ColorBox plugin for jQuery 1.9
 
 ###### v1.3 (1/25/2013)
