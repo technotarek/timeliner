@@ -22,7 +22,7 @@ Other, more complex timeline plugins are available. If your needs are far greate
 
 2. Wrap your timeline in an element with an ID and CLASS of timelineContainer. You can set your own container ID using the plugin's options
 
-		<div id="timelineContainer">
+		<div id="timelineContainer" class="timelineContainer">
 			...
 		</div>
 
