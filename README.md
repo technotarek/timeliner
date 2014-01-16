@@ -20,7 +20,7 @@ Other, more complex timeline plugins are available. If your needs are far greate
 ## Usage
 1. Include screen.css and timeliner.js (or timeliner.min.js). Optionally, include also responsive.css for basic responsive behavior on phones and mobile devices below 480px wide (iPad responsive behavior forthcoming).
 
-2. Wrap your timeline in an element with an ID of timelineContainer. You can set your own container using the plugin's options
+2. Wrap your timeline in an element with an ID and CLASS of timelineContainer. You can set your own container ID using the plugin's options
 
 		<div id="timelineContainer">
 			...
@@ -85,7 +85,7 @@ Other, more complex timeline plugins are available. If your needs are far greate
 
 A timeline with only one major marker and two events would look like this:
 
-	<div id="timelineContainer">
+	<div id="timelineContainer" class="timelineContainer">
 		<div class="timelineMajor">
 			<h2 class="timelineMajorMarker">Major Marker</h2>
 			<dl class="timelineMinor">
