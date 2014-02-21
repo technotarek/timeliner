@@ -23,7 +23,7 @@
         function startTimeliner(options){
             var settings = {
                 timelineContainer: options['timelineContainer'] || '#timelineContainer', // value: selector of the main element holding the timeline's content, default to #timelineContainer
-                startState: options['closed'] || 'closed', // value: closed | open,
+                startState: options['startState'] || 'closed', // value: closed | open,
                 // default to closed; sets whether the timeline is
                 // initially collapsed or fully expanded
                 startOpen: options['startOpen'] || [], // value: array of IDs of
