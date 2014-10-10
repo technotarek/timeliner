@@ -132,7 +132,7 @@
                 return;                 // we already initialized this timelineContainer
             } else {
                 $(settings.timelineContainer).data('started', true);
-                $(settings.timelineContainer+" "+".expandAll").html(settings.expandAllText);
+                $(settings.timelineContainer+" "+".timeline-toggle").html(settings.expandAllText);
                 $(settings.timelineContainer+" "+".collapseAll").html(settings.collapseAllText);
 
                 // If startState option is set to closed, hide all the events; else, show fully expanded upon load
