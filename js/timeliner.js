@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version		1.6.1
+* @version		2.0
 * @copyright	Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
@@ -22,48 +22,96 @@
 
         function startTimeliner(options) {
             var settings = {
-                timelineContainer: options['timelineContainer'] || '#timelineContainer', // value: selector of the main element holding the timeline's content
-                // default to #timelineContainer
-                timelineEXContent: options['timelineEXContent'] || '.timelineEvent', // value: tag structure where expanded content will live.
-                // A timeline Item's EX ID should always be on this item.
-                timelineSection: options['timelineSection'] || '.timelineMajor',
-                timelineSectionMarker: options['timelineSectionMarker'] || '.timelineMajorMarker',
-                timelineTriggerContainer: options['timelineTriggerContainer'] || '.timelineMinor dt', // value: tag structure for the container that will trigger the expand
-                // A timeline item's ID should always be on this item.
-                timelineTriggerAnchor: options['timelineTriggerAnchor'] || 'a', // value: tag structure from the trigger container to the anchor that will be tagged 'open' or 'closed'
-                EXContentIdSuffix: options['timelineEXContentSuffix'] || 'EX', // value: ID suffix to identify expanded content
-                oneOpen: options['oneOpen'] || false, // value: true | false
-                // default to false; sets whether only one item on the timeline can
-                // be open at a time. If true, other items will close when one is opened.
-                startState: options['startState'] || 'closed', // value: closed | open,
-                // default to closed; sets whether the timeline is
-                // initially collapsed or fully expanded
-                startOpen: options['startOpen'] || [], // value: array of IDs of
-                // single timelineEvents, default to empty; sets
-                // the minor events that you want to display open
-                // by default on page load
-                baseSpeed: options['baseSpeed'] || 200, // value: numeric, default to
-                // 200; sets the base speed for animation of the
-                // event marker
-                speed: options['speed'] || 4, // value: numeric, defalut to 4; a
-                // multiplier applied to the base speed that sets
-                // the speed at which an event's conents are
-                // displayed and hidden
-                fontOpen: options['fontOpen'] || '1.2em', // value: any valid CSS
-                // font-size value, defaults to 1em; sets the font
-                // size of an event after it is opened
-                fontClosed: options['fontClosed'] || '1em', // value: any valid CSS
-                // font-size value, defaults to 1em; sets the font
-                // size of an event after it is closed
-                expandAllText: options ['expandAllText'] || '+ expand all', // value:
-                // string, sets the text of the expandAll selector
-                // after the timeline is fully collapsed
-                collapseAllText: options['collapseAllText'] || '- collapse all' // // value:
-                // string, sets the text of the expandAll selector
-                // after the timeline is fully expanded
+                timelineContainer: options['timelineContainer'] || '#timeline',
+                // Container for the element holding the entire timeline (e.g. a DIV)
+                // value: ID or class selector
+                // default: #timeline
+                // note: must be unique for each timeline on page
+
+                timelineSection: options['timelineSection'] || '.timeline-wrapper',
+                // Wrapper that contains items under a specific marker (e.g., all of the events under a year on the timeline)
+                // value: class selector
+                // default: .timeline-wrapper
+                // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
+
+                timelineSectionMarker: options['timelineSectionMarker'] || '.timeline-year',
+                // Class selector applied to each major item on the timeline, such as each year
+                // value: class selector
+                // default: .timeline-year
+
+                timelineTriggerContainer: options['timelineTriggerContainer'] || '.timeline-event',
+                // Class assigned to wrappers surrounding each individual event
+                // value: selector
+                // default: .timeline-event
+                // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
+
+                timelineTriggerAnchor: options['timelineTriggerAnchor'] || 'a',
+                // Element that is wrapped around the event's title; when clicked, expands the event and reveals its full contents
+                // value: tag/element
+                // default: a
+                // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
+
+                timelineEXContent: options['timelineEXContent'] || '.timeline-event-ex',
+                // Element that contains the event's full content to be displayed when event is expanded, an event's expanded ID should alway be on this item
+                // value: class selector
+                // default: .timeline-event-ex
+                // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
+
+                EXContentIdSuffix: options['timelineEXContentSuffix'] || 'EX',
+                // ID suffix to identify expanded (aka EX) content
+                // value: string
+                // default: EX
+
+                oneOpen: options['oneOpen'] || false,
+                // sets whether only one item on the timeline can be open at a time. If true, other items will close when one is opened.
+                // value: true | false
+                // default: false
+                // note: does not apply to events identified in startOpen option
+
+                startState: options['startState'] || 'closed',
+                // sets whether the timeline is initially collapsed or fully expanded
+                // value: closed | open
+                // default: closed
+                // note: setting to "open" makes the startOpen option meaningless
+
+                startOpen: options['startOpen'] || [],
+                // sets the events to display expanded on page load
+                // value: array of IDs of single timelineEvents (e.g., ['#event01'] or ['#event01','#event02'])
+                // default: []
+
+                baseSpeed: options['baseSpeed'] || 200,
+                // sets the base speed for animation of an event
+                // value: numeric
+                // default: 200
+
+                speed: options['speed'] || 4,
+                // multiplier applied to the base speed that sets the speed at which an event's contents are displayed and hidden
+                // value: numeric
+                // default: 4
+
+                fontOpen: options['fontOpen'] || '1.2em',
+                // sets the font size of an event after it is opened
+                // value: any valid CSS font-size value,
+                // default: 1.2em
+
+                fontClosed: options['fontClosed'] || '1em',
+                // sets the font size of an event after it is closed
+                // value: any valid CSS font-size value
+                // defaults: 1em
+
+                expandAllText: options ['expandAllText'] || '+ expand all',
+                // sets the text of the expandAll selector after the timeline is fully collapsed
+                // value: string
+                // default: + expand all
+
+                collapseAllText: options['collapseAllText'] || '- collapse all'
+                //sets the text of the expandAll selector after the timeline is fully expanded
+                // value: string
+                // default: - collapse all
             };
 
             function openEvent(eventHeading,eventBody) {
+                console.log('open');
                 $(eventHeading)
                     .removeClass('closed')
                     .addClass('open')
@@ -107,7 +155,7 @@
                 }
 
                 // Minor Event Click
-                $(settings.timelineContainer).on("click",settings.timelineTriggerContainer,function(){
+                $(settings.timelineContainer).on("click",settings.timelineTriggerContainer+" dt",function(){
 
                     var currentId = $(this).attr('id');
 
@@ -152,13 +200,13 @@
 
                     } else{
 
-                        closeEvent($(this).parents(settings.timelineSection).find("dl.timelineMinor a"),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
+                        closeEvent($(this).parents(settings.timelineSection).find("dl"+settings.timelineTriggerContainer+" a"),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
 
                     }
                 });
 
                 // All Markers/Events
-                $(settings.timelineContainer+" "+".expandAll").click(function()
+                $(settings.timelineContainer+" "+".timeline-toggle").click(function()
                 {
                     if($(this).hasClass('expanded'))
                     {
