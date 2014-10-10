@@ -111,7 +111,6 @@
             };
 
             function openEvent(eventHeading,eventBody) {
-                console.log('open');
                 $(eventHeading)
                     .removeClass('closed')
                     .addClass('open')
