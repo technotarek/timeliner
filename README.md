@@ -14,7 +14,7 @@ Other, more complex timeline plugins are available. If your needs are far greate
 
 ##  Important Upgrade Notes
 
-Users wishing to upgrade from v1.x to v2.x should note that the default markup for timeliner.js has changed. Specifically, most of the default class names have changed. Here is a list of most of the major changes:
+Users wishing to upgrade from v1.x to v2.x should note that the default markup for timeliner.js has changed. Specifically, most of the default class names have changed. Here is a list the major changes:
 
 *	"timelineContainer" ==> "timeline-container"
 *	"timelineMajor" ==> "timeline-wrapper"
@@ -22,14 +22,14 @@ Users wishing to upgrade from v1.x to v2.x should note that the default markup f
 *	"timelineMinor" ==> "timeline-event"
 *	"timelineEvent" ==> "timeline-event-ex"
 
-To resolve these changes, you can either update your markup or use the new customization options introducted with v2.0 to reflect the old element naming conventions. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor".
+To resolve these changes, you can either update your markup or use the new customization options introducted with v2.0 to reflect the old element naming conventions. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor". Otherwise, simply replace your original timeliner javascript and css files with the new ones.
 
 In addition, note:
 
 *	The display:none property from the previous timelineEvent (now timeline-event-ex) element is no longer necessary
 *	The expand/collapse element uses completely new and simplified markup. See the Usage section for details.
 
-Please accept my apologies for any inconvenience, but the changes provide an improved semantic markup for the most common use case of this plugin: a chronological/historical timeline where years are the major markers. Other changes were made for the sake of consistency and to simplify future development.
+The changes provide an improved semantic markup for the most common use case of this plugin: a chronological/historical timeline where years are the major markers. Other changes were made for the sake of consistency and to simplify future development.
 
 ## Requirements
 *	jQuery
@@ -79,92 +79,92 @@ Please accept my apologies for any inconvenience, but the changes provide an imp
 		$.timeliner({timelineContainer: '#timeline'});
 		$.timeliner({timelineContainer: '#timeline2'});
 
-10. Or, instantiate with options. If you using multiple timelines, options can be set on each individual timeline:
+10. Or, instantiate with options. Use as many or as few as you like. If you're using multiple timelines on a single page, options can be set on each individual timeline.
 
 		$.timeliner({
-                timelineContainer: options['timelineContainer'] || '#timeline',
+                timelineContainer: '#timeline',
                 // Container for the element holding the entire timeline (e.g. a DIV)
                 // value: ID or class selector
                 // default: #timeline
                 // note: must be unique for each timeline on page
 
-                timelineSection: options['timelineSection'] || '.timeline-wrapper',
+                timelineSection: '.timeline-wrapper',
                 // Wrapper that contains items under a specific marker (e.g., all of the events under a year on the timeline)
                 // value: class selector
                 // default: .timeline-wrapper
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineSectionMarker: options['timelineSectionMarker'] || '.timeline-year',
+                timelineSectionMarker: '.timeline-year',
                 // Class selector applied to each major item on the timeline, such as each year
                 // value: class selector
                 // default: .timeline-year
 
-                timelineTriggerContainer: options['timelineTriggerContainer'] || '.timeline-event',
+                timelineTriggerContainer: '.timeline-event',
                 // Class assigned to wrappers surrounding each individual event
                 // value: selector
                 // default: .timeline-event
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineTriggerAnchor: options['timelineTriggerAnchor'] || 'a',
+                timelineTriggerAnchor: 'a',
                 // Element that is wrapped around the event's title; when clicked, expands the event and reveals its full contents
                 // value: tag/element
                 // default: a
                 // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineEXContent: options['timelineEXContent'] || '.timeline-event-ex',
+                timelineEXContent: '.timeline-event-ex',
                 // Element that contains the event's full content to be displayed when event is expanded, an event's expanded ID should alway be on this item
                 // value: class selector
                 // default: .timeline-event-ex
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                EXContentIdSuffix: options['timelineEXContentSuffix'] || 'EX',
+                EXContentIdSuffix: 'EX',
                 // ID suffix to identify expanded (aka EX) content
                 // value: string
                 // default: EX
 
-                oneOpen: options['oneOpen'] || false,
+                oneOpen: false,
                 // sets whether only one item on the timeline can be open at a time. If true, other items will close when one is opened.
                 // value: true | false
                 // default: false
                 // note: does not apply to events identified in startOpen option
 
-                startState: options['startState'] || 'closed',
+                startState: 'closed',
                 // sets whether the timeline is initially collapsed or fully expanded
                 // value: closed | open
                 // default: closed
                 // note: setting to "open" makes the startOpen option meaningless
 
-                startOpen: options['startOpen'] || [],
+                startOpen: [],
                 // sets the events to display expanded on page load
                 // value: array of IDs of single timelineEvents (e.g., ['#event01'] or ['#event01','#event02'])
                 // default: []
 
-                baseSpeed: options['baseSpeed'] || 200,
+                baseSpeed: 200,
                 // sets the base speed for animation of an event
                 // value: numeric
                 // default: 200
 
-                speed: options['speed'] || 4,
+                speed: 4,
                 // multiplier applied to the base speed that sets the speed at which an event's contents are displayed and hidden
                 // value: numeric
                 // default: 4
 
-                fontOpen: options['fontOpen'] || '1.2em',
+                fontOpen: '1.2em',
                 // sets the font size of an event after it is opened
                 // value: any valid CSS font-size value,
                 // default: 1.2em
 
-                fontClosed: options['fontClosed'] || '1em',
+                fontClosed: '1em',
                 // sets the font size of an event after it is closed
                 // value: any valid CSS font-size value
                 // defaults: 1em
 
-                expandAllText: options ['expandAllText'] || '+ expand all',
+                expandAllText: '+ expand all',
                 // sets the text of the expandAll selector after the timeline is fully collapsed
                 // value: string
                 // default: + expand all
 
-                collapseAllText: options['collapseAllText'] || '- collapse all'
+                collapseAllText: '- collapse all'
                 //sets the text of the expandAll selector after the timeline is fully expanded
                 // value: string
                 // default: - collapse all
