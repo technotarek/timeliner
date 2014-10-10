@@ -12,6 +12,24 @@ Other, more complex timeline plugins are available. If your needs are far greate
 *	http://www.csslab.cl/2011/08/18/jquery-timelinr/
 *	http://timeglider.com/jquery/
 
+##  Important Upgrade Notes
+
+Users wishing to upgrade from v1.x to v2.x should note that the default markup for timeliner.js has changed. Specifically, most of the default class names have changed. Here is a list of most of the major changes:
+
+*	"timelineContainer" ==> "timeline-container"
+*	"timelineMajor" ==> "timeline-wrapper"
+*	"timelineMajorMarker" ==> "timeline-year"
+*	"timelineMinor" ==> "timeline-event"
+*	"timelineEvent" ==> "timeline-event-ex"
+
+To resolve these changes, you can either update your markup or use the new customization options introducted with v2.0 to reflect the old element naming conventions. For example, you could use the new "timelineSection" option to change selector from "timeline-wrapper" back to "timelineMajor".
+
+In addition, note:
+
+*	The display:none property from the previous timelineEvent (now timeline-event-ex) element is no longer necessary
+*	The expand/collapse element uses completely new and simplified markup. See the Usage section for details.
+
+Please accept my apologies for any inconvenience, but the changes provide an improved semantic markup for the most common use case of this plugin: a chronological/historical timeline where events are the major markers. Other changes were made for the sake of consistency and to simplify future development.
 
 ## Requirements
 *	jQuery
