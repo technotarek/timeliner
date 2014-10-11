@@ -16,13 +16,14 @@ Other, more complex timeline plugins are available. If your needs are far greate
 
 Users wishing to upgrade from v1.x to v2.x should note that the default markup for timeliner.js has changed. Specifically, most of the default class names have changed. Here is a list the major changes:
 
+*	screen.css was divided into two separate files, demo.css and timeliner.css
 *	"timelineContainer" ==> "timeline-container"
 *	"timelineMajor" ==> "timeline-wrapper"
 *	"timelineMajorMarker" ==> "timeline-year"
 *	"timelineMinor" ==> "timeline-event"
 *	"timelineEvent" ==> "timeline-event-ex"
 
-To resolve these changes, you can either update your markup or use the new customization options introducted with v2.0 to reflect the old element naming conventions. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor". Otherwise, simply replace your original timeliner javascript and css files with the new ones.
+To resolve these changes, you can either update your markup or use the new customization options introducted with v2.0 to reflect the old element naming conventions. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor". Otherwise, simply replace your original timeliner javascript and css files with the new ones (noting new file names).
 
 In addition, note:
 
@@ -36,7 +37,7 @@ The changes provide an improved semantic markup for the most common use case of 
 *	Optional: Jack Moore's ColorBox jQuery plugin
 
 ## Usage
-1. Include screen.css and timeliner.js (or timeliner.min.js). Optionally, include also responsive.css for basic responsive behavior on phones and mobile devices below 480px wide (iPad responsive behavior forthcoming).
+1. Include timeliner.css (or timeliner.min.css) and timeliner.js (or timeliner.min.js). Optionally, also include responsive.css for basic responsive behavior on phones and mobile devices below 480px wide (iPad responsive behavior forthcoming).
 
 2. Wrap your timeline in an element with an ID of "timeline" and CLASS of timeline-container. You can set your own container ID using the plugin's options. If you need to use a customized class value as well, update the CSS accordingly.
 
@@ -202,6 +203,10 @@ A timeline with only one major marker and two events would look like this:
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Change Log
+
+###### v2.1 (10/10/2014)
+*	Separated css into two separate files to isolate demo from plugin styles (demo.css and timeliner.css)
+*	Added minified css file (timeliner.min.css)
 
 ###### v2.0 (10/10/2014)
 *	Merged customization efforts developed by \( https://github.com/ascloutier/timeliner \)
