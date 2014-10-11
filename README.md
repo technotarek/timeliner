@@ -27,6 +27,7 @@ To resolve these changes, you can either update your markup or use the new custo
 
 In addition, note:
 
+*	A timelineContainer must be specified at instantiation
 *	The display:none property from the previous timelineEvent (now timeline-event-ex) element is no longer necessary
 *	The expand/collapse element uses completely new and simplified markup. See the Usage section for details.
 
@@ -73,7 +74,7 @@ The changes provide an improved semantic markup for the most common use case of 
 
 8. Instantiate:
 
-		$.timeliner();
+		$.timeliner({timelineContainer: '#timeline'});
 
 9. Or, instantiate with multiple timelines:
 

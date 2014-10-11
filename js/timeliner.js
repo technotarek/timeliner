@@ -128,7 +128,8 @@
 
 
             if ($(settings.timelineContainer).data('started')) {
-                return;                 // we already initialized this timelineContainer
+                return;
+                // we already initialized this timelineContainer
             } else {
                 $(settings.timelineContainer).data('started', true);
                 $(settings.timelineContainer+" "+".timeline-toggle").html(settings.expandAllText);
@@ -142,7 +143,6 @@
 
                     // show startOpen events
                     $.each($(settings.startOpen), function(index, value) {
-                        //openEvent($(value).parent(settings.timelineContainer).find(settings.timelineTriggerContainer+" "+settings.timelineTriggerAnchor),$(value+settings.EXContentIdSuffix));
                         openEvent($(value).find(settings.timelineTriggerAnchor),$(value+settings.EXContentIdSuffix));
                     });
 
