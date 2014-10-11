@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Timeliner.js Demo</title>
+	<link rel="stylesheet" href="css/demo.css" type="text/css" media="screen">
+	<!-- <link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen"> -->
+	<link rel="stylesheet" href="css/timeliner-future.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="inc/colorbox.css" type="text/css" media="screen">
+</head>
+<body>
+	<div class="container">
+		<h1><span class="step1">Timeliner</span> <span class="step2">Into</span> <span class="step3">The</span> Future</h1>
+
+		<div id="timeline" class="timeline-container">
+
+			<button class="timeline-toggle">+ expand all</button>
+
+			<br class="clear">
+
+			<div class="timeline-wrapper">
+				<h2 class="timeline-year"><span>2050</span></h2>
+				<dl class="timeline-event">
+					<dt id="cars"><a>Flying Cars</a></dt>
+					<dd class="timeline-event-ex" id="carsEX">
+						<div class="media">
+							<img src="http://lh4.ggpht.com/_feGuZGTqCVw/SkLpxlRD9jI/AAAAAAAABI4/q8KlcGr2RVY/jetsons%5B2%5D.jpg?imgmax=800" alt="">
+						</div><!-- /.media -->
+
+						<p>A flying car is hypothetical personal aircraft that provides door-to-door aerial transportation (e.g., from home to work or to the supermarket) as conveniently as a car but without the requirement for roads, runways or other specially-prepared operating areas. In addition, the aircraft lacks any visible means of lift (unlike fixed-wing aircraft and helicopters), thus allowing it to be operated in urban areas and close to buildings, people and other obstructions.</p>
+						<p>The flying car has been depicted in works of fantasy and science fiction such as Chitty Chitty Bang Bang, Harry Potter and the Chamber of Secrets, The Jetsons, Star Wars, Blade Runner, Back to the Future Part II and The Fifth Element as well as in technology magazines such as Popular Science, Popular Mechanics, and Mechanix Illustrated.</p>
+
+					</dd><!-- /.timeline-event-ex -->
+				</dl><!-- /.timeline-event -->
+			</div><!-- /.timeline-wrapper -->
+
+			<div class="timeline-wrapper">
+				<h2 class="timeline-year"><span>2100</span></h2>
+				<dl class="timeline-event">
+					<dt id="teleport"><a>Teleportation</a></dt>
+					<dd class="timeline-event-ex" id="teleportEX">
+
+						<div class="media">
+							<img src="http://4.bp.blogspot.com/-QD9566AGsQ8/TarR9PATWpI/AAAAAAAABNg/ZfvB-FRzMus/s1600/star%2Btrek%2Bbeam.jpg" alt="">
+						</div><!-- /.media -->
+
+						<p>Teleportation, or Teletransportation, is the theoretical transfer of matter or energy from one point to another without traversing the physical space between them. It is a common subject of science fiction literature, film, and television.</p>
+
+					</dd><!-- /.timeline-event-ex -->
+				</dl><!-- /.timeline-event -->
+
+			</div><!-- /.timeline-wrapper -->
+
+			<div class="timeline-wrapper">
+				<h2 class="timeline-year"><span>2150</span></h2>
+				<dl class="timeline-event">
+					<dt id="singularity"><a>Singularity</a></dt>
+					<dd class="timeline-event-ex" id="singularityEX">
+
+						<div class="media">
+							<img src="http://s3.amazonaws.com/rapgenius/matrix.gif" alt="">
+						</div><!-- /.media -->
+
+						<p>The technological singularity hypothesis is that accelerating progress in technologies will cause a runaway effect wherein artificial intelligence will exceed human intellectual capacity and control, thus radically changing or even ending civilization in an event called the singularity.</p>
+
+					</dd><!-- /.timeline-event-ex -->
+				</dl>
+			</div>
+			<div class="timeline-wrapper">
+				<h2 class="timeline-year"><span>3000</span></h2>
+				<dl class="timeline-event">
+					<dt id="infinity"><a>Infinity</a></dt>
+					<dd class="timeline-event-ex" id="infinityEX">
+
+						<div class="media">
+							<img src="http://thegodguy.files.wordpress.com/2010/10/infinity.jpg" alt="">
+						</div><!-- /.media -->
+
+						<p>Infinity (symbol: ∞) is an abstract concept describing something without any limit and is relevant in a number of fields, predominantly mathematics and physics. In mathematics, "infinity" is often treated as if it were a number (i.e., it counts or measures things: "an infinite number of terms") but it is not the same sort of number as the real numbers. </p>
+
+					</dd><!-- /.timeline-event-ex -->
+				</dl><!-- /.timeline-event -->
+
+			</div><!-- /.timeline-wrapper -->
+
+			<br class="clear">
+		</div><!-- /#timeline -->
+
+	</div><!-- /.container -->
+
+	<!-- GLOBAL CORE SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="inc/colorbox.js"></script>
+	<script type="text/javascript" src="js/timeliner.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.timeliner({timelineContainer:'#timeline'});
+			// Colorbox Modal
+			$(".CBmodal").colorbox({inline:true, initialWidth:100, maxWidth:682, initialHeight:100, transition:"elastic",speed:750});
+		});
+	</script>
+
+</body>
+</html>
