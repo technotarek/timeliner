@@ -5,8 +5,8 @@
 @color-time:saturate(fade(@color-accent,65%),50%);
 @color-ink: fade(#FFF,85%);
 @color-accent: #174262;
-@color-contrast: #98631C;
-@color-link: #7DBADF;
+@color-accent-2: #78A8B2;
+@color-contrast: #FF2A9C;
 @font: "Josefin Sans",arial,sans serif;
 @background-img: "../img/bg-space-mod.jpg";
 
@@ -19,6 +19,7 @@ body {
 }
 
 h1 {
+	color:@color-accent-2;
 	font-size:4.8em;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -34,9 +35,12 @@ h2 {
 .step2 { color:fade(@color-ink,40%); }
 .step3 { color:fade(@color-ink,60%); }
 
+.lead {
+	.step3;
+}
 
 a:hover,a:link,a:visited {
-	color:@color-link;
+	color:@color-accent-2;
 }
 
 .timeline-container {
@@ -64,7 +68,6 @@ a:hover,a:link,a:visited {
 	top:4px;
 }
 
-
 .timeline-toggle {
 	background:fade(@color-accent,65%);
 	border:0;
@@ -80,6 +83,17 @@ a:hover,a:link,a:visited {
 	text-transform: uppercase;
 	white-space:nowrap;
 }
+.timeline-toggle:hover {
+	background: fade(darken(@color-contrast,35%),80%);
+	-webkit-transition:background 0.2s ease-in;
+	-moz-transition:background 0.2s ease-in;
+	-o-transition:background 0.2s ease-in;
+	transition:background 0.2s ease-in;
+}
+.timeline-toggle:focus {
+	outline:none;
+}
+
 
 .timeline-wrapper {
 	clear:left;
@@ -112,7 +126,11 @@ a:hover,a:link,a:visited {
 		    text-align: center;
 		}
 		span:hover {
-			background: fade(@color-time,80%);
+			background: fade(@color-time,95%);
+			-webkit-transition:background 0.2s ease-in;
+			-moz-transition:background 0.2s ease-in;
+			-o-transition:background 0.2s ease-in;
+			transition:background 0.2s ease-in;
 		}
 
 	}
@@ -156,6 +174,10 @@ a:hover,a:link,a:visited {
 		}
 		a:hover {
 			.step3;
+			-webkit-transition:color 0.2s ease-in;
+			-moz-transition:color 0.2s ease-in;
+			-o-transition:color 0.2s ease-in;
+			transition:color 0.2s ease-in;
 		}
 	}
 	dd {
