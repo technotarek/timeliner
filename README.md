@@ -181,7 +181,7 @@ The 2.x changes provide an improved semantic markup. They also other developer t
 
 		});
 
-11. Add an expand/collapse all events by adding the following inside of the main #timeline. Use the expandAllText and collapseAllText options to customize this button.
+11. Add an expand/collapse all events by adding the following inside of the main #timeline. Use the expandAllText and collapseAllText options to customize this button. You may include more than one expand/collapse button per timeline, such as at the top and bottom of your timeline. When the state of one changes, it will update all others.
 
 		<button class="timelineToggle">+ expand all</button>
 
@@ -222,6 +222,7 @@ In fact, it's possible to use a different markup structure entirely by fully usi
 ###### v2.1 (10/10/2014)
 *	Separated css into two separate files to isolate demo from plugin styles (demo.css and timeliner.css)
 *	Added minified css file (timeliner.min.css)
+*       Support multiple expand/collapse buttons per timeline
 
 ###### v2.0 (10/10/2014)
 *	Merged customization efforts developed by \( https://github.com/ascloutier/timeliner \)

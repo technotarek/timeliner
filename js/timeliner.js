@@ -213,18 +213,19 @@
                 });
 
                 // All Markers/Events
-                $(settings.timelineContainer+" "+".timeline-toggle").click(function()
+                var el = settings.timelineContainer+" "+".timeline-toggle";
+                $(el).click(function()
                 {
-                    if($(this).hasClass('expanded'))
+                    if($(el).hasClass('expanded'))
                     {
 
-                        closeEvent($(this).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(this).parents(settings.timelineContainer).find(settings.timelineEXContent));
-                        $(this).removeClass('expanded').html(settings.expandAllText);
+                        closeEvent($(el).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(el).parents(settings.timelineContainer).find(settings.timelineEXContent));
+                        $(el).removeClass('expanded').html(settings.expandAllText);
 
                     } else{
 
-                        openEvent($(this).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(this).parents(settings.timelineContainer).find(settings.timelineEXContent));
-                        $(this).addClass('expanded').html(settings.collapseAllText);
+                        openEvent($(el).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(el).parents(settings.timelineContainer).find(settings.timelineEXContent));
+                        $(el).addClass('expanded').html(settings.collapseAllText);
 
                     }
                 });
