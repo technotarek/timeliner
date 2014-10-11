@@ -235,9 +235,10 @@ Out of the box, Timeliner.js includes CSS for basic styling. The styling will re
 *	Separated css into two separate files to isolate demo from plugin styles (demo.css and timeliner.css)
 *	Added minified css file (timeliner.min.css)
 *       Support multiple expand/collapse buttons per timeline
+*       Added new demo files for "Future" theme
 
 ###### v2.0 (10/10/2014)
-*	Merged customization efforts developed by \( https://github.com/ascloutier/timeliner \)
+*	Merged customization efforts developed by https://github.com/ascloutier/timeliner
 *	Merge includes new oneOpen option
 *	Revised plugin's default selector labels to reflect semantic naming in the case of a traditional timeline
 *	Fixed issue where major markers would not re-open after one cycle
