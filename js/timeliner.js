@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version		2.0
+* @version		2.1
 * @copyright	Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
@@ -29,20 +29,20 @@
                 // note: must be unique for each timeline on page
 
                 timelineSection: options['timelineSection'] || '.timeline-wrapper',
-                // Wrapper that contains items under a specific marker (e.g., all of the events under a year on the timeline)
+                // Wrapper that surrounds a time and series of events (e.g., all of the events under a year on the timeline)
                 // value: class selector
                 // default: .timeline-wrapper
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineSectionMarker: options['timelineSectionMarker'] || '.timeline-year',
+                timelineSectionMarker: options['timelineSectionMarker'] || '.timeline-time',
                 // Class selector applied to each major item on the timeline, such as each year
                 // value: class selector
-                // default: .timeline-year
+                // default: .timeline-time
 
-                timelineTriggerContainer: options['timelineTriggerContainer'] || '.timeline-event',
-                // Class assigned to wrappers surrounding each individual event
+                timelineTriggerContainer: options['timelineTriggerContainer'] || '.timeline-series',
+                // Wrapper surrounding a series of events corresponding to the timelineSectionMarker
                 // value: selector
-                // default: .timeline-event
+                // default: .timeline-series
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
                 timelineTriggerAnchor: options['timelineTriggerAnchor'] || 'a',
@@ -51,10 +51,18 @@
                 // default: a
                 // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineEXContent: options['timelineEXContent'] || '.timeline-event-ex',
+                timelineEventContainer: options['timelineEventContainer'] || 'dt',
+                // Wrapper surrounding a series of events corresponding to the timelineSectionMarker
+                // value: tag or class selector
+                // default: dt
+                // note: When leaving this value at its default, you do not need to apply a class to the dt element if you use the plugins recommended tag structure and markup
+                // note: Change this from the default, perhaps to a class like ".timeline-event", in the case that you do not want to use the plugins recommened markup structure and prefer to use anothe element (e.g, div) instead of a dt tag to mark each event within a series.
+                // note: Changing this value from the default will require modifications to the CSS file in order to retain default styling
+
+                timelineEXContent: options['timelineEXContent'] || '.timeline-event-content',
                 // Element that contains the event's full content to be displayed when event is expanded, an event's expanded ID should alway be on this item
                 // value: class selector
-                // default: .timeline-event-ex
+                // default: .timeline-event
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
                 EXContentIdSuffix: options['timelineEXContentSuffix'] || 'EX',
@@ -154,7 +162,7 @@
                 }
 
                 // Minor Event Click
-                $(settings.timelineContainer).on("click",settings.timelineTriggerContainer+" dt",function(){
+                $(settings.timelineContainer).on("click",settings.timelineTriggerContainer+" "+settings.timelineEventContainer,function(){
 
                     var currentId = $(this).attr('id');
 
@@ -199,7 +207,7 @@
 
                     } else{
 
-                        closeEvent($(this).parents(settings.timelineSection).find("dl"+settings.timelineTriggerContainer+" a"),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
+                        closeEvent($(this).parents(settings.timelineSection).find(settings.timelineTriggerContainer+" a"),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
 
                     }
                 });

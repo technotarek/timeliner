@@ -18,10 +18,6 @@
   padding: 3px 5px;
   white-space: nowrap;
 }
-a.expandAll:hover {
-  color: #7DBADF;
-  cursor: pointer;
-}
 .timeline-wrapper {
   clear: left;
   float: left;
@@ -47,7 +43,7 @@ a.expandAll:hover {
   line-height: 1.7em;
   padding: 3px 5px 1px;
 }
-.timeline-event {
+.timeline-series {
   clear: left;
   float: left;
   margin: 0 12px 0 0;
@@ -55,7 +51,7 @@ a.expandAll:hover {
   position: relative;
   width: 880px;
 }
-.timeline-event dt {
+.timeline-series dt {
   background: url(../images/timeline_decade_tick.gif) left center no-repeat;
   clear: left;
   font-size: 1.6em;
@@ -65,26 +61,26 @@ a.expandAll:hover {
   padding: 0 0 0 24px;
   white-space: nowrap;
 }
-.timeline-event dt a {
+.timeline-series dt a {
   color: #999;
   cursor: pointer;
 }
-.timeline-event dt a .closed {
+.timeline-series dt a .closed {
   color: #999;
   font-size: 1em;
   margin-left: 0;
 }
-.timeline-event dt a .open {
+.timeline-series dt a .open {
   color: #7DBADF;
 }
-.timeline-event dt a:hover {
+.timeline-series dt a:hover {
   color: #7DBADF;
 }
-.timeline-event dd {
+.timeline-series dd {
   padding-left: 24px;
   width: 100%;
 }
-.timeline-event dd h3 {
+.timeline-series dd h3 {
   color: #FFF;
   clear: both;
   float: left;
@@ -92,17 +88,17 @@ a.expandAll:hover {
   margin: 0;
   white-space: nowrap;
 }
-.timeline-event-ex {
+.timeline-event-content {
   display: none;
 }
-.timeline-event-ex p {
+.timeline-event-content p {
   clear: left;
   float: left;
   line-height: 1.5em;
   margin: 6px 0 10px;
   width: 500px;
 }
-.timeline-event-ex h4 {
+.timeline-event-content h4 {
   clear: left;
   float: left;
   font-size: 1.4em;
@@ -110,7 +106,7 @@ a.expandAll:hover {
   margin: 10px 0 0;
   padding: 0 0 0 20px;
 }
-.timeline-event-ex blockquote {
+.timeline-event-content blockquote {
   border-left: 2px solid #ccc;
   clear: left;
   float: left;
@@ -119,28 +115,28 @@ a.expandAll:hover {
   padding: 0 30px;
   width: 400px;
 }
-.timeline-event-ex blockquote .attribution {
+.timeline-event-content blockquote .attribution {
   font-size: 0.7em;
   text-align: right;
 }
-.timeline-event-ex .media {
+.timeline-event-content .media {
   float: right;
   padding: 0 0 12px;
   width: 300px;
 }
-.timeline-event-ex .media img {
+.timeline-event-content .media img {
   border: 2px solid #000;
   margin: 0;
 }
-.timeline-event-ex .media p {
+.timeline-event-content .media p {
   font-size: 1.2em;
   margin: 0;
   padding: 0;
 }
-.timeline-event-ex .media a:link,
-.timeline-event-ex .media a:visited {
+.timeline-event-content .media a:link,
+.timeline-event-content .media a:visited {
   color: #ab221b;
 }
-.timeline-event-ex .media a:hover {
+.timeline-event-content .media a:hover {
   color: #7DBADF;
 }

@@ -19,11 +19,11 @@ Users wishing to upgrade from v1.x to v2.x should note that the default markup f
 *	screen.css was divided into two separate files, demo.css and timeliner.css
 *	"timelineContainer" ==> "timeline-container"
 *	"timelineMajor" ==> "timeline-wrapper"
-*	"timelineMajorMarker" ==> "timeline-year"
-*	"timelineMinor" ==> "timeline-event"
-*	"timelineEvent" ==> "timeline-event-ex"
+*	"timelineMajorMarker" ==> "timeline-time"
+*	"timelineMinor" ==> "timeline-series"
+*	"timelineEvent" ==> "timeline-event-content"
 
-To resolve these changes, you can either update your markup or use the new customization options introducted with v2.0 to reflect the old element naming conventions. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor". Otherwise, simply replace your original timeliner javascript and css files with the new ones (noting new file names).
+To resolve these changes, you can either update your markup or in most case use the new customization options introducted with v2.0. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor". Otherwise, simply replace your original timeliner javascript and css files with the 2.x versions.
 
 In addition, note:
 
@@ -31,7 +31,7 @@ In addition, note:
 *	The display:none property from the previous timelineEvent (now timeline-event-ex) element is no longer necessary
 *	The expand/collapse element uses completely new and simplified markup. See the Usage section for details.
 
-The changes provide an improved semantic markup for the most common use case of this plugin: a chronological/historical timeline where years are the major markers. Other changes were made for the sake of consistency and to simplify future development.
+The 2.x changes provide an improved semantic markup. They also other developer to use their own markup structure. Where as version 1.x required the use of dl, dt, dd tags, it is now possible to use your own markup in coordination with the plugin's options.  Other changes were made for the sake of consistency and to simplify future development.
 
 ## Requirements
 *	jQuery
@@ -54,21 +54,21 @@ The changes provide an improved semantic markup for the most common use case of 
 
 4. Wrap the major markers in an element with a class of 'timeline-year'. See the options if you need to customize this class value.
 
-		<h2 class="timeline-year">1954</h2>
+		<h2 class="timeline-time">1954</h2>
 
 5. Separate the individual events into DL elements with a class of "timeline-event". See the options if you need to customize this class value.
 
-		<dl class="timeline-event">
+		<dl class="timeline-event-series">
 			...
 		</dl>
 
-6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID
+6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID.
 
 		<dt id="19540517"><a>Brown vs Board of Education</a></dt>
 
-7. Wrap the full event content in a DL tag; give each DL an ID based on the DT with 'EX' appended and a class of 'timeline-event-ex'. See the options to customize these values.
+7. Wrap the full event content in a DD tag; give each DD an ID based on the DT with 'EX' appended and a class of 'timeline-event-content'. See the options to customize these values.
 
-		<dd class="timeline-event-ex" id="19540517EX">
+		<dd class="timeline-event-content" id="19540517EX">
 			...
 		</dd>
 
@@ -96,12 +96,12 @@ The changes provide an improved semantic markup for the most common use case of 
                 // default: .timeline-wrapper
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineSectionMarker: '.timeline-year',
+                timelineSectionMarker: '.timeline-time',
                 // Class selector applied to each major item on the timeline, such as each year
                 // value: class selector
                 // default: .timeline-year
 
-                timelineTriggerContainer: '.timeline-event',
+                timelineTriggerContainer: '.timeline-series',
                 // Class assigned to wrappers surrounding each individual event
                 // value: selector
                 // default: .timeline-event
@@ -113,7 +113,15 @@ The changes provide an improved semantic markup for the most common use case of 
                 // default: a
                 // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineEXContent: '.timeline-event-ex',
+                timelineEventContainer: options['timelineEventContainer'] || 'dt',
+                // Wrapper surrounding a series of events corresponding to the timelineSectionMarker
+                // value: tag or class selector
+                // default: dt
+                // note: When leaving this value at its default, you do not need to apply a class to the dt element if you use the plugins recommended tag structure and markup
+                // note: Change this from the default, perhaps to a class like ".timeline-event", in the case that you do not want to use the plugins recommened markup structure and prefer to use anothe element (e.g, div) instead of a dt tag to mark each event within a series.
+                // note: Changing this value from the default will require modifications to the CSS file in order to retain default styling
+
+                timelineEXContent: '.timeline-event-content',
                 // Element that contains the event's full content to be displayed when event is expanded, an event's expanded ID should alway be on this item
                 // value: class selector
                 // default: .timeline-event-ex
@@ -175,29 +183,35 @@ The changes provide an improved semantic markup for the most common use case of 
 
 11. Add an expand/collapse all events by adding the following inside of the main #timeline. Use the expandAllText and collapseAllText options to customize this button.
 
-		<div class="timelineToggle"><p><a class="expandAll">+ expand all</a></p></div>
+		<button class="timelineToggle">+ expand all</button>
 
 ## Sample
 
-A timeline with only one major marker and two events would look like this:
+Using the plugins defaults and recommended markup, a timeline with only one time marker and two events would look like this:
 
 	<div id="timeline" class="timeline-container">
 		<div class="timeline-wrapper">
-			<h2 class="timeline-year">1976</h2>
-			<dl class="timeline-event">
+			<h2 class="timeline-time">1976</h2>
+
+			<dl class="timeline-series">
+
 				<dt id="event01"><a>Event</a></dt>
-				<dd class="timeline-event-ex" id="event01EX">
+				<dd class="timeline-event-content" id="event01EX">
 					<p>Content about the event goes here.</p>
-				</dd><!-- /.timeline-event -->
-			</dl><!-- /.timeline-year -->
-			<dl class="timeline-year">
+				</dd>
+
 				<dt id="event02"><a>Another Event</a></dt>
-				<dd class="timeline-event-ex" id="event02EX">
+				<dd class="timeline-event-content" id="event02EX">
 					<p>Content about the other event.</p>
-				</dd><!-- /.timeline-event -->
-			</dl><!-- /.timeline-year -->
-		</div><!-- /.timeline-wrapper -->
-	</div><!-- /.timeline-container -->
+				</dd>
+
+			</dl>
+		</div>
+	</div>
+
+Using the customization options introduced in v2.0, it's possible to customize the tags and class names used by the plugin. For example, the "timeline-time" class applied to the h2 tag can be customized. Perhaps, if you're using the plugin to outline the steps involved in a task (like putting together a piece of furniture), you could use "timeline-step" instead.
+
+In fact, it's possible to use a different markup structure entirely by fully using the v2.0 customization options.
 
 ## Additional Examples
 *	http://www.investigatingpower.org/timelines/mccarthyism/
