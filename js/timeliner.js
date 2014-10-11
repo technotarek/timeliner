@@ -226,7 +226,6 @@
 
                         openEvent($(el).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(el).parents(settings.timelineContainer).find(settings.timelineEXContent));
                         $(el).addClass('expanded').html(settings.collapseAllText);
-
                     }
                 });
             }

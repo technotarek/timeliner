@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Timeliner.js Demo</title>
+	<!-- <link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen"> -->
+	<link rel="stylesheet" href="css/timeliner-future.css" type="text/css" media="screen">
+</head>
+<body>
+	<div class="container">
+		<h1>Timeliner.js</h1>
+		<h2><span class="step1">Into</span> <span class="step2">The</span> <span class="step3">Future</span></h2>
+
+		<div id="timeline" class="timeline-container">
+
+			<button class="timeline-toggle">+ expand all</button>
+
+			<br class="clear">
+
+			<div class="timeline-wrapper">
+				<h2 class="timeline-time"><span>2050</span></h2>
+				<dl class="timeline-series">
+					<span class="tick tick-before"></span>
+					<dt id="cars"><a>Flying Cars</a></dt>
+					<span class="tick tick-after"></span>
+					<dd class="timeline-event-content" id="carsEX">
+						<div class="media">
+							<a href="https://www.youtube.com/watch?v=FyinD6ZDqeg" target="blank"><img src="img/event-cars.jpg" alt="flying car"></a>
+							<p><a href="https://www.youtube.com/watch?v=FyinD6ZDqeg" target="blank">See it in Action</a></p>
+						</div><!-- /.media -->
+
+						<p>A flying car is hypothetical personal aircraft that provides door-to-door aerial transportation (e.g., from home to work or to the supermarket) as conveniently as a car but without the requirement for roads, runways or other specially-prepared operating areas.</p>
+						<p>The flying car has been depicted in works of fantasy and science fiction such as Chitty Chitty Bang Bang, Harry Potter and the Chamber of Secrets, The Jetsons, Star Wars, Blade Runner, Back to the Future Part II and The Fifth Element as well as in technology magazines such as Popular Science, Popular Mechanics, and Mechanix Illustrated.</p>
+
+					<br class="clear">
+					</dd><!-- /.timeline-event-content -->
+
+					<span class="tick tick-before"></span>
+					<dt id="robots"><a>Robots</a></dt>
+					<span class="tick tick-after"></span>
+					<dd class="timeline-event-content" id="robotsEX">
+						<div class="media">
+							<a href="https://www.youtube.com/watch?v=hUnibKe_o18" target="_blank"><img src="img/event-robots.jpg" alt="singing robots"></a>
+							<p><a href="https://www.youtube.com/watch?v=hUnibKe_o18" target="_blank">Listen</a></p>
+						</div><!-- /.media -->
+
+						<blockquote>
+							<p>The world is very different ever since the robotic uprising of the mid-nineties</p>
+							<p>There is no more unhappiness<br>Affirmative</p>
+							<p>We no longer say yes, instead we say affirmative
+							<br>Yes, affirmative
+							<br>Unless its a more colloquial situation with a few robo friends</p>
+							<p>There is only one type of dance, the robot
+							<br>And the robo-boogie
+							<br>Oh yes, two kinds of dances.</p>
+						</blockquote>
+
+					<br class="clear">
+					</dd><!-- /.timeline-event-content -->
+
+
+				</dl><!-- /.timeline-series -->
+			</div><!-- /.timeline-wrapper -->
+
+			<div class="timeline-wrapper">
+				<h2 class="timeline-time"><span>2100</span></h2>
+				<dl class="timeline-series">
+					<span class="tick tick-before"></span>
+					<dt id="teleport"><a>Teleportation</a></dt>
+					<span class="tick tick-after"></span>
+					<dd class="timeline-event-content" id="teleportEX">
+
+						<div class="media">
+							<a href="https://www.teliportme.com/view/446746" target="_blank"><img src="img/event-teleportation.jpg" alt="teleporting humans"></a>
+							<p><a href="https://www.teliportme.com/view/446746" target="_blank">Try It Now</a></p>
+						</div><!-- /.media -->
+
+						<p>Teleportation, or Teletransportation, is the theoretical transfer of matter or energy from one point to another without traversing the physical space between them. It is a common subject of science fiction literature, film, and television.</p>
+
+					<br class="clear">
+					</dd><!-- /.timeline-event-content -->
+				</dl><!-- /.timeline-series -->
+
+			</div><!-- /.timeline-wrapper -->
+
+			<div class="timeline-wrapper">
+				<h2 class="timeline-time"><span>2150</span></h2>
+				<dl class="timeline-series">
+					<span class="tick tick-before"></span>
+					<dt id="singularity"><a>Singularity</a></dt>
+					<span class="tick tick-after"></span>
+					<dd class="timeline-event-content" id="singularityEX">
+
+						<div class="media">
+							<img src="img/event-singularity.jpg" alt="">
+						</div><!-- /.media -->
+
+						<p>The technological singularity hypothesis is that accelerating progress in technologies will cause a runaway effect wherein artificial intelligence will exceed human intellectual capacity and control, thus radically changing or even ending civilization in an event called the singularity.</p>
+
+					<br class="clear">
+					</dd><!-- /.timeline-event-content -->
+				</dl>
+			</div>
+
+			<br class="clear">
+
+			<button class="timeline-toggle">+ expand all</button>
+
+		</div><!-- /#timeline -->
+
+	</div><!-- /.container -->
+
+	<!-- GLOBAL CORE SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/timeliner.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.timeliner({timelineContainer:'#timeline'});
+		});
+	</script>
+
+</body>
+</html>

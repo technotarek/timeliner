@@ -1,15 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans:100,400,700);
+@import "/css/demo.less";
 
 @color-body: #090A0F;
-@color-time: fade(#FFF,95%);
+@color-time:saturate(fade(@color-accent,65%),50%);
 @color-ink: fade(#FFF,85%);
-@color-link: #FFA401;
-@color-accent: #103B65;
+@color-accent: #174262;
+@color-contrast: #98631C;
+@color-link: #7DBADF;
 @font: "Josefin Sans",arial,sans serif;
+@background-img: "../img/bg-space-mod.jpg";
 
 body {
-	background: @color-body;
-	background-image:url(http://automobilein.com/wp-content/uploads/2014/01/Space-Wallpapers.jpg);
+	background: @color-body url(@background-img) fixed no-repeat;
 	color: @color-ink;
 	font-family:@font;
 	font-size:68.5%;
@@ -17,8 +19,13 @@ body {
 }
 
 h1 {
-	color:@color-ink;
 	font-size:4.8em;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size:3.6em;
 	font-weight: 400;
 	text-transform: uppercase;
 }
@@ -28,18 +35,38 @@ h1 {
 .step3 { color:fade(@color-ink,60%); }
 
 
-a:hover,a:link {
+a:hover,a:link,a:visited {
 	color:@color-link;
 }
 
 .timeline-container {
-	border-left:2px solid fade(@color-accent,80%);
+	border-left:4px solid @color-time;
 	margin:20px auto;
 	width:900px;
 }
 
+.timeline-container-tick {
+	background: @color-time;
+	content:"";
+	display:block;
+	height:4px;
+	left:-8px;
+	width:14px;
+	position:relative;
+}
+
+.timeline-container::before {
+	.timeline-container-tick;
+	top:-4px;
+}
+.timeline-container::after {
+	.timeline-container-tick;
+	top:4px;
+}
+
+
 .timeline-toggle {
-	background:fade(@color-accent,80%);
+	background:fade(@color-accent,65%);
 	border:0;
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;
@@ -54,33 +81,28 @@ a:hover,a:link {
 	white-space:nowrap;
 }
 
-	a.expandAll:hover {
-		color:#7DBADF;
-		cursor:pointer;
-	}
-
 .timeline-wrapper {
 	clear:left;
 	float:left;
 	margin:0 0 12px;
 	width:900px;
-	h2::before {
-		border-top:2px solid fade(@color-accent,80%);
+	.timeline-time::before {
+		border-top:4px solid @color-time;
 		content: "";
 		display:inline-block;
-		height:1px;
+		height:4px;
 		margin-right:0px;
 		vertical-align: middle;
-		width:20px;
+		width:24px;
 	}
-	h2 {
+	.timeline-time {
 		cursor: pointer;
 		font-size:2.8em;
 		font-weight:400;
-		margin:0 0 10px;
+		margin:0 0 30px 0;
 		padding:0;
 		span {
-			background: fade(@color-accent,80%);
+			background: @color-time;
 		    -moz-border-radius: 10px;
 		    border-radius: 10px;
 			color:@color-ink;
@@ -89,11 +111,15 @@ a:hover,a:link {
 			padding:10px 10px 5px 10px;
 		    text-align: center;
 		}
+		span:hover {
+			background: fade(@color-time,80%);
+		}
+
 	}
 }
 
 
-.timeline-event {
+.timeline-series {
 	clear:left;
 	float:left;
 	margin:0 12px 0 0;
@@ -101,10 +127,10 @@ a:hover,a:link {
 	position:relative;
 	width:880px;
 	dt::before {
-		border-top:1px solid fade(@color-accent,80%);
+		border-top:3px solid @color-time;
 		content: "";
 		display:inline-block;
-		height:1px;
+		height:3px;
 		margin-right:10px;
 		vertical-align: middle;
 		width:10px;
@@ -112,7 +138,6 @@ a:hover,a:link {
 	dt {
 		clear:left;
 		font-size:2em;
-		list-style-type:none;
 		line-height:1.2em;
 		margin:0 0 12px;
 		text-transform: uppercase;
@@ -147,8 +172,28 @@ a:hover,a:link {
 	}
 }
 
-.timeline-event-ex {
+.tick {
+	background:@color-time;
+	clear:both;
+	display:block;
+	height:2px;
+	left:0;
+	width:4px;
+	position:relative;
+}
+
+.tick-before {
+	top: -6px;
+}
+
+.tick-after {
+	top:-4px;
+}
+
+
+.timeline-event-content {
 	display:none;
+	margin-bottom:40px;
 	p {
 		clear:left;
 		float:left;
@@ -170,7 +215,7 @@ a:hover,a:link {
 		border-left:2px solid @color-accent;
 		clear:left;
 		float:left;
-		font-size:1.8em;
+		line-height: 1.2em;
 		margin-left:0;
 		padding:0 30px;
 		width:400px;
@@ -191,15 +236,16 @@ a:hover,a:link {
 			width:200px;
 		}
 		p {
-			font-size:1.2em;
-			margin:0;
-			padding:0;
+			clear:both;
+			font-size:1.4em;
+			margin:15px 0;
+			a {
+				text-transform: lowercase;
+			}
 		}
 		a:link, a:visited {
-			color:#ab221b;
 		}
 		a:hover {
-			color:#7DBADF;
 		}
 	}
 
