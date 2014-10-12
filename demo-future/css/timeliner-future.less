@@ -11,7 +11,11 @@
 @background-img: "../img/bg-space-mod.jpg";
 
 body {
-	background: @color-body url(@background-img) fixed no-repeat;
+	background: @color-body url(@background-img)  no-repeat bottom right fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	color: @color-ink;
 	font-family:@font;
 	font-size:68.5%;
