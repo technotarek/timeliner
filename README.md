@@ -65,7 +65,7 @@ The 2.x changes provide an improved semantic markup. They also other developer t
 
 6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID.
 
-		<dt id="19540517"><a>Brown vs Board of Education</a></dt>
+		<dt id="19540517" class="timeline-event"><a>Brown vs Board of Education</a></dt>
 
 7. Wrap the full event content in a DD tag; give each DD an ID based on the DT with 'EX' appended and a class of 'timeline-event-content'. See the options to customize these values.
 
