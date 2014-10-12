@@ -5,7 +5,7 @@ Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The
 
 ## Demos
 *	Original: http://www.technotarek.com/timeliner/timeliner.html
-*       Advanced Theming: https://technotarek.com/timeliner/demo-future/timeliner-future.html
+*       Advanced Theming: http://technotarek.com/timeliner/demo-future/timeliner-future.html
 
 Other, more complex timeline plugins are available. If your needs are far greater than those provided here, consider one of the following:
 
@@ -218,15 +218,15 @@ Using the customization options introduced in v2.0, it's possible to customize t
 In fact, it's possible to use a different markup structure entirely by fully using the v2.0 customization options.
 
 ## Additional Examples
-*       https://technotarek.com/timeliner/demo-future/timeliner-future.html
+*       http://technotarek.com/timeliner/demo-future/timeliner-future.html
 *	http://www.investigatingpower.org/timelines/mccarthyism/
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Design Recommendations and Showcase
 
-Out of the box, Timeliner.js includes CSS for basic styling. The styling will reflect the [original demo](http://technotarek.com/timeliner/timeliner.html). Aside from the basic layout though (it's left alignment and left-to-right animations), almost everything can be customized and themed to your needs. Below are a few implementations, some shared with me by users, that show the design capabilities:
+Out of the box, Timeliner.js includes CSS for basic styling. The styling will reflect the [original demo](http://technotarek.com/timeliner/timeliner.html). Aside from the basic layout though (left alignment and left-to-right animations), almost everything can be customized and themed to your needs. Below are a few implementations, some shared with me by users, that show the design capabilities:
 
-*       "Future" Theme (included in repo): https://technotarek.com/timeliner/demo-future/timeliner-future.html
+*       http://technotarek.com/timeliner/demo-future/timeliner-future.html
 *       http://mfsgmbh.de/typo3/index.php?id=2
 *       http://magicvalley.com/app/projects/BWC/BWC.html
 *       http://justingarver.com/timeline-of-s/
