@@ -105,13 +105,13 @@ The 2.x changes provide an improved semantic markup. They also other developer t
                 timelineTriggerContainer: '.timeline-series',
                 // Class assigned to wrappers surrounding each individual event
                 // value: selector
-                // default: .timeline-event
+                // default: .timeline-series
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineTriggerAnchor: 'a',
+                timelineTriggerAnchor: '.timeline-event',
                 // Element that is wrapped around the event's title; when clicked, expands the event and reveals its full contents
-                // value: tag/element
-                // default: a
+                // value: class selector
+                // default: .timeline-event
                 // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
 
                 timelineEventContainer: options['timelineEventContainer'] || 'dt',
@@ -146,7 +146,6 @@ The 2.x changes provide an improved semantic markup. They also other developer t
                 // note: setting to "open" makes the startOpen option meaningless
                 // note: flat mode initally collapses the entire timeline except for the major markers
                 // note: the flat state is an initial display option only -- the timeline major markers return to normal before once they've  been opened/displayed
-
 
                 startOpen: [],
                 // sets the events to display expanded on page load
@@ -199,12 +198,12 @@ Using the plugins defaults and recommended markup, a timeline with only one time
 
 			<dl class="timeline-series">
 
-				<dt id="event01"><a>Event</a></dt>
+				<dt id="event01" class="timeline-event"><a>Event</a></dt>
 				<dd class="timeline-event-content" id="event01EX">
 					<p>Content about the event goes here.</p>
 				</dd>
 
-				<dt id="event02"><a>Another Event</a></dt>
+				<dt id="event02" class="timeline-event"><a>Another Event</a></dt>
 				<dd class="timeline-event-content" id="event02EX">
 					<p>Content about the other event.</p>
 				</dd>

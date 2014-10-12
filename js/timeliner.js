@@ -45,10 +45,10 @@
                 // default: .timeline-series
                 // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineTriggerAnchor: options['timelineTriggerAnchor'] || 'a',
+                timelineTriggerAnchor: options['timelineTriggerAnchor'] || '.timeline-event',
                 // Element that is wrapped around the event's title; when clicked, expands the event and reveals its full contents
-                // value: tag/element
-                // default: a
+                // value: class
+                // default: .timeline-event
                 // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
 
                 timelineEventContainer: options['timelineEventContainer'] || 'dt',
@@ -138,18 +138,18 @@
                     // if flat mode, make sure parent series is visible
                     $(eventHeading).parents(settings.timelineTriggerContainer).show();
                 }
-                $(eventHeading).each(function(){
-                    $(this)
-                        .first()
-                        .removeClass('closed')
-                        .addClass('open')
-                        .animate({ fontSize: settings.fontOpen }, settings.baseSpeed);
-                    $(eventBody).show(settings.speed*settings.baseSpeed);
-                });
+
+                $(eventHeading).find('a')
+                    .removeClass('closed')
+                    .addClass('open')
+                    .animate({ fontSize: settings.fontOpen }, settings.baseSpeed);
+                $(eventBody).show(settings.speed*settings.baseSpeed);
+
             }
 
             function closeEvent(eventHeading,eventBody) {
-                $(eventHeading)
+
+                $(eventHeading).find('a')
                     .animate({ fontSize: settings.fontClosed }, 0)
                     .removeClass('open')
                     .addClass('closed');
@@ -193,18 +193,18 @@
                     var currentId = $(this).attr('id');
 
                     // if the event is currently open
-                    if($(this).find(settings.timelineTriggerAnchor).is('.open'))
+                    if($(this).find('a').is('.open'))
                     {
+                        closeEvent($(this),$("#"+currentId+settings.EXContentIdSuffix))
 
-                        closeEvent($(settings.timelineTriggerAnchor,this),$("#"+currentId+settings.EXContentIdSuffix))
-
-                    } else{ // if the event is currently closed
+                    } else{
+                    // if the event is currently closed
 
                         if( settings.oneOpen == true ) {
                             closeEvent($(this).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(this).parents(settings.timelineContainer).find(settings.timelineEXContent));
                         }
 
-                        openEvent($(settings.timelineTriggerAnchor, this),$("#"+currentId+settings.EXContentIdSuffix));
+                        openEvent($(this),$("#"+currentId+settings.EXContentIdSuffix));
 
                     }
 
@@ -232,7 +232,7 @@
                         openEvent($(this).parents(settings.timelineSection).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
                     }else
                     {
-                        closeEvent($(this).parents(settings.timelineSection).find(settings.timelineTriggerContainer+" a"),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
+                        closeEvent($(this).parents(settings.timelineSection).find(settings.timelineTriggerContainer),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
                     }
                 });
 
