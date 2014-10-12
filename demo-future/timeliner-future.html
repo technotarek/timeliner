@@ -119,7 +119,10 @@
 	<script type="text/javascript" src="../js/timeliner.js"></script>
 	<script>
 		$(document).ready(function() {
-			$.timeliner({timelineContainer:'#timeline'});
+			$.timeliner({
+				timelineContainer:'#timeline',
+				startState:'flat'
+			});
 			$('.venobox').venobox();
 		});
 

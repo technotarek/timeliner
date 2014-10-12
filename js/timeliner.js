@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version		2.1
+* @version		2.2
 * @copyright	Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
@@ -77,10 +77,12 @@
                 // note: does not apply to events identified in startOpen option
 
                 startState: options['startState'] || 'closed',
-                // sets whether the timeline is initially collapsed or fully expanded
-                // value: closed | open
+                // sets whether the timeline is initially collapsed, fully expanded, or "flat" mode
+                // value: closed | open | flat
                 // default: closed
                 // note: setting to "open" makes the startOpen option meaningless
+                // note: flat mode initally collapses the entire timeline except for the major markers
+                // note: the flat state is an initial display option only -- the timeline major markers return to normal before once they've  been opened/displayed
 
                 startOpen: options['startOpen'] || [],
                 // sets the events to display expanded on page load
@@ -119,6 +121,11 @@
             };
 
             function openEvent(eventHeading,eventBody) {
+
+                if(settings.startState==='flat'){
+                    // if flat mode, make sure parent series is visible
+                    $(eventHeading).parents(settings.timelineTriggerContainer).show();
+                }
                 $(eventHeading)
                     .removeClass('closed')
                     .addClass('open')
@@ -134,6 +141,17 @@
                 $(eventBody).hide(settings.speed*settings.baseSpeed);
             }
 
+            function openStartEvents(events) {
+                // show startOpen events
+                $.each(events, function(index, value) {
+
+                    // first make sure all events in the series are visible (overriding flat mode), then show individual events per option settings
+                    $(value).parents(settings.timelineTriggerContainer).show(settings.speed*settings.baseSpeed, function(){
+                        openEvent($(value).find(settings.timelineTriggerAnchor),$(value+settings.EXContentIdSuffix));
+                    });
+
+                });
+            }
 
             if ($(settings.timelineContainer).data('started')) {
                 return;
@@ -143,16 +161,21 @@
                 $(settings.timelineContainer+" "+".timeline-toggle").html(settings.expandAllText);
                 $(settings.timelineContainer+" "+".collapseAll").html(settings.collapseAllText);
 
-                // If startState option is set to closed, hide all the events; else, show fully expanded upon load
-                if(settings.startState==='closed')
+                if(settings.startState==='flat')
                 {
+                    // hide all series (event headings)
+                    $(settings.timelineContainer+' '+settings.timelineTriggerContainer).hide();
+
+                    openStartEvents($(settings.startOpen));
+
+                }else if(settings.startState==='closed')
+                {
+                    // If startState option is set to closed, hide all the event contents; else, show fully expanded upon load
+
                     // Close all items
                     $(settings.timelineContainer+" "+settings.timelineEXContent).hide();
 
-                    // show startOpen events
-                    $.each($(settings.startOpen), function(index, value) {
-                        openEvent($(value).find(settings.timelineTriggerAnchor),$(value+settings.EXContentIdSuffix));
-                    });
+                    openStartEvents($(settings.startOpen));
 
                 }else{
 
@@ -200,15 +223,13 @@
                         closeEvent($(this).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(this).parents(settings.timelineContainer).find(settings.timelineEXContent));
                     }
 
-                    if(numEvents > numOpen )
+                    if(numEvents > numOpen)
                     {
-
+                        // if there are more events available than are displayed, then fully expand all events below MajorMarker
                         openEvent($(this).parents(settings.timelineSection).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
-
-                    } else{
-
+                    }else
+                    {
                         closeEvent($(this).parents(settings.timelineSection).find(settings.timelineTriggerContainer+" a"),$(this).parents(settings.timelineSection).find(settings.timelineEXContent));
-
                     }
                 });
 
@@ -226,6 +247,8 @@
 
                         openEvent($(el).parents(settings.timelineContainer).find(settings.timelineTriggerAnchor,settings.timelineTriggerContainer),$(el).parents(settings.timelineContainer).find(settings.timelineEXContent));
                         $(el).addClass('expanded').html(settings.collapseAllText);
+
+
                     }
                 });
             }

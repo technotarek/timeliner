@@ -139,11 +139,14 @@ The 2.x changes provide an improved semantic markup. They also other developer t
                 // default: false
                 // note: does not apply to events identified in startOpen option
 
-                startState: 'closed',
-                // sets whether the timeline is initially collapsed or fully expanded
-                // value: closed | open
+                startState: options['startState'] || 'closed',
+                // sets whether the timeline is initially collapsed, fully expanded, or "flat" mode
+                // value: closed | open | flat
                 // default: closed
                 // note: setting to "open" makes the startOpen option meaningless
+                // note: flat mode initally collapses the entire timeline except for the major markers
+                // note: the flat state is an initial display option only -- the timeline major markers return to normal before once they've  been opened/displayed
+
 
                 startOpen: [],
                 // sets the events to display expanded on page load
@@ -230,6 +233,9 @@ Out of the box, Timeliner.js includes CSS for basic styling. The styling will re
 
 
 ## Change Log
+
+###### v2.2 (10/12/2014)
+*       Added new "flat" startState which allows for a fully collapsed timeline upon load
 
 ###### v2.1 (10/10/2014)
 *	Separated css into two separate files to isolate demo from plugin styles (demo.css and timeliner.css)
