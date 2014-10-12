@@ -120,27 +120,6 @@
                 // default: - collapse all
             };
 
-            function openEvent(eventHeading,eventBody) {
-
-                if(settings.startState==='flat'){
-                    // if flat mode, make sure parent series is visible
-                    $(eventHeading).parents(settings.timelineTriggerContainer).show();
-                }
-                $(eventHeading)
-                    .removeClass('closed')
-                    .addClass('open')
-                    .animate({ fontSize: settings.fontOpen }, settings.baseSpeed);
-                $(eventBody).show(settings.speed*settings.baseSpeed);
-            }
-
-            function closeEvent(eventHeading,eventBody) {
-                $(eventHeading)
-                    .animate({ fontSize: settings.fontClosed }, 0)
-                    .removeClass('open')
-                    .addClass('closed');
-                $(eventBody).hide(settings.speed*settings.baseSpeed);
-            }
-
             function openStartEvents(events) {
                 // show startOpen events
                 $.each(events, function(index, value) {
@@ -151,6 +130,30 @@
                     });
 
                 });
+            }
+
+            function openEvent(eventHeading,eventBody) {
+
+                if(settings.startState==='flat'){
+                    // if flat mode, make sure parent series is visible
+                    $(eventHeading).parents(settings.timelineTriggerContainer).show();
+                }
+                $(eventHeading).each(function(){
+                    $(this)
+                        .first()
+                        .removeClass('closed')
+                        .addClass('open')
+                        .animate({ fontSize: settings.fontOpen }, settings.baseSpeed);
+                    $(eventBody).show(settings.speed*settings.baseSpeed);
+                });
+            }
+
+            function closeEvent(eventHeading,eventBody) {
+                $(eventHeading)
+                    .animate({ fontSize: settings.fontClosed }, 0)
+                    .removeClass('open')
+                    .addClass('closed');
+                $(eventBody).hide(settings.speed*settings.baseSpeed);
             }
 
             if ($(settings.timelineContainer).data('started')) {
