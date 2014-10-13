@@ -3,13 +3,12 @@
 ## Overview
 Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) simple, (2) able to handle nearly any form of content (including images, video, audio), (3) printer friendly, and highly customizable with just CSS and HTML.
 
-Please [drop me a line](http://www.technotarek.com/contact "drop me a line")if you do do something interesting with it. See below for samples from other users.
+Please [drop me a line](http://www.technotarek.com/contact "drop me a line") if you do do something interesting with it. See below for samples from other users.
 
 ## Demos and Live Implementations
 
-*       http://technotarek.com/timeliner/demo-future/timeliner-future.html (Advanced CSS3 Theme)
+*       http://technotarek.com/timeliner/demo-future/timeliner-future.html (Advanced CSS3 Customizations)
 *	http://www.technotarek.com/timeliner/timeliner.html (Original)
-
 *       Investigating Power: http://investigatingpower.org/timelines/civil-rights/
 
 ## Quick Start
@@ -38,12 +37,12 @@ Using the plugin's defaults and recommended markup, a timeline with two major ti
 
                         <dl class="timeline-series">
 
-                                <dt id="event01" class="timeline-event"><a>Event</a></dt>
+                                <dt class="timeline-event" id="event01"><a>Event</a></dt>
                                 <dd class="timeline-event-content" id="event01EX">
                                         <p>Content about the event goes here.</p>
                                 </dd>
 
-                                <dt id="event02" class="timeline-event"><a>Another Event</a></dt>
+                                <dt class="timeline-event" id="event02"><a>Another Event</a></dt>
                                 <dd class="timeline-event-content" id="event02EX">
                                         <p>Content about the other event.</p>
                                 </dd>
@@ -55,7 +54,7 @@ Using the plugin's defaults and recommended markup, a timeline with two major ti
 
                         <dl class="timeline-series">
 
-                                <dt id="event03" class="timeline-event"><a>Yet Another Event</a></dt>
+                                <dt class="timeline-event" id="event03"><a>Yet Another Event</a></dt>
                                 <dd class="timeline-event-content" id="event03EX">
                                         <p>Content about the event goes here.</p>
                                 </dd>
@@ -64,10 +63,13 @@ Using the plugin's defaults and recommended markup, a timeline with two major ti
                 </div>
         </div>
 
+[Emmet](http://emmet.io/) snippet:
+
+        div#timeline.timeline-container>div.timeline-wrapper>h2.timeline-time+dl.timeline-series>dt.timeline-event#my-event-01+dd.timeline-event-content#my-event-01EX
 
 ##  Important Upgrade Notes
 
-Users wishing to upgrade from v1.x to v2.x should note that the default markup for timeliner.js has changed. Specifically, most of the default class names have changed. Here is a list the major changes:
+Users wishing to upgrade from v1.x to v2.x should note that the default markup for timeliner.js has changed. Specifically, most of the default class names have changed.
 
 *	screen.css was divided into two separate files, demo.css and timeliner.css
 *	"timelineContainer" ==> "timeline-container"
@@ -76,16 +78,16 @@ Users wishing to upgrade from v1.x to v2.x should note that the default markup f
 *	"timelineMinor" ==> "timeline-series"
 *	"timelineEvent" ==> "timeline-event-content"
 
-To resolve these changes, you can either update your markup or in most case use the new customization options introducted with v2.0. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor". Otherwise, simply replace your original timeliner javascript and css files with the 2.x versions.
+To resolve these changes, either update your markup and/or use the new customization options introducted with v2.0. For example, you could use the new "timelineSection" option to change the selector from "timeline-wrapper" back to "timelineMajor". Otherwise, simply replace your original timeliner javascript and css files with the 2.x versions.
 
 In addition, note:
 
-*       Each major marker tag needs a class of timeline-event
-*	The display:none property from the previous timelineEvent (now timeline-event-ex) element is no longer necessary
+*       Each minor marker tag needs a class of timeline-event
+*	The display:none property from the previous timelineEvent (now timeline-event-content) element is no longer necessary
 *	The expand/collapse element uses new and simplified markup. See the Usage section for details.
-*       The license has been changed from a _Creative Commons Attribution-ShareAlike 3.0 Unported License_ to a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. I will recognize the original license for version 1.x.
+*       The license has been changed from a _Creative Commons Attribution-ShareAlike 3.0 Unported License_ to a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The former continues to apply to version 1.x implementations.
 
-The 2.x changes provide an improved semantic markup. They also other developer to use their own markup structure. Where as version 1.x required the use of dl, dt, dd tags, it is now possible to use your own markup in coordination with the plugin's options.  Other changes were made for the sake of consistency and to simplify future development.
+The 2.x changes provide an improved semantic markup. They also help other developers use a custom markup structure. Whereas version 1.x required the use of dl, dt, dd tags, it is now possible to use your own markup in coordination with the plugin's options.  Other changes were made for the sake of consistency and to simplify future development.
 
 ## Requirements
 *	jQuery
@@ -110,15 +112,15 @@ The 2.x changes provide an improved semantic markup. They also other developer t
 
 		<h2 class="timeline-time">1954</h2>
 
-5. Separate the individual events into DL elements with a class of "timeline-event". See the options if you need to customize this class value.
+5. Separate the individual events into DL elements with a class of "timeline-event-series". See the options if you need to customize this class value.
 
 		<dl class="timeline-event-series">
 			...
 		</dl>
 
-6. Wrap the title of the individual events in a DT and A tag; give each DT a unique ID.
+6. Wrap the title of the individual events in a DT tag surrounding an A tag; give each DT a unique ID and the class of "timeline-event".
 
-		<dt id="19540517" class="timeline-event"><a>Brown vs Board of Education</a></dt>
+		<dt  class="timeline-event" id="19540517"><a>Brown vs Board of Education</a></dt>
 
 7. Wrap the full event content in a DD tag; give each DD an ID based on the DT with 'EX' appended and a class of 'timeline-event-content'. See the options to customize these values.
 
@@ -251,12 +253,12 @@ Using the plugins defaults and recommended markup, a timeline with only one time
 
 			<dl class="timeline-series">
 
-				<dt id="event01" class="timeline-event"><a>Event</a></dt>
+				<dt class="timeline-event" id="event01"><a>Event</a></dt>
 				<dd class="timeline-event-content" id="event01EX">
 					<p>Content about the event goes here.</p>
 				</dd>
 
-				<dt id="event02" class="timeline-event"><a>Another Event</a></dt>
+				<dt class="timeline-event" id="event02"><a>Another Event</a></dt>
 				<dd class="timeline-event-content" id="event02EX">
 					<p>Content about the other event.</p>
 				</dd>
