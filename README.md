@@ -7,9 +7,14 @@ Please [drop me a line](http://www.technotarek.com/contact "drop me a line") if 
 
 ## Demos and Live Implementations
 
-*       http://technotarek.com/timeliner/demo-future/timeliner-future.html (Advanced CSS3 Customizations)
-*	http://www.technotarek.com/timeliner/timeliner.html (Original)
-*       Investigating Power: http://investigatingpower.org/timelines/civil-rights/
+###### Advanced CSS3 Customization Demo
+http://technotarek.com/timeliner/demo-future/timeliner-future.html
+
+###### Original Demo
+http://www.technotarek.com/timeliner/timeliner.html
+
+###### Original Implementation: Investigating Power
+http://investigatingpower.org/timelines/civil-rights/
 
 ## Quick Start
 
