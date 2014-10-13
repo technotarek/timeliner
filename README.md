@@ -1,17 +1,69 @@
 # Timeliner
 
 ## Overview
-Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) fully accessible and 508 compliant (an original requirement) (2) simple, (3) able to handle nearly any form of content, and (4) printer friendly. There's also plenty of room for you to get creative with the styling. (Please drop me a line if you do do something cool with it.) Thanks to on-going development and contributions from the community, timeliner continues to improve. Notable enhancements include basic responsiveness for mobile devices and the ability to add multiple timelines to a single page.
+Build a simple, interactive, historical timeline with HTML, CSS, and jQuery. The benefits of this timeline script are that it's (1) simple, (2) able to handle nearly any form of content (including images, video, audio), (3) printer friendly, and highly customizable with just CSS and HTML.
 
-## Demos
-*	Original: http://www.technotarek.com/timeliner/timeliner.html
-*       Advanced Theming: http://technotarek.com/timeliner/demo-future/timeliner-future.html
+Please [drop me a line](http://www.technotarek.com/contact "drop me a line")if you do do something interesting with it. See below for samples from other users.
 
-Other, more complex timeline plugins are available. If your needs are far greater than those provided here, consider one of the following:
+## Demos and Live Implementations
 
-*	https://github.com/VeriteCo/Timeline
-*	http://www.csslab.cl/2011/08/18/jquery-timelinr/
-*	http://timeglider.com/jquery/
+*       http://technotarek.com/timeliner/demo-future/timeliner-future.html (Advanced CSS3 Theme)
+*	http://www.technotarek.com/timeliner/timeliner.html (Original)
+
+*       Investigating Power: http://investigatingpower.org/timelines/civil-rights/
+
+## Quick Start
+
+#### Load Plugin and Dependencies
+
+        <link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/timeliner.min.js"></script>
+
+#### Instantiate
+
+        <script>
+                $(document).ready(function() {
+                        $.timeliner({});
+                });
+        </script>
+
+#### Markup
+Using the plugin's defaults and recommended markup, a timeline with two major time markers (1976 and 1984) and a total of three events looks like this:
+
+        <div id="timeline" class="timeline-container">
+                <div class="timeline-wrapper">
+                        <h2 class="timeline-time">1976</h2>
+
+                        <dl class="timeline-series">
+
+                                <dt id="event01" class="timeline-event"><a>Event</a></dt>
+                                <dd class="timeline-event-content" id="event01EX">
+                                        <p>Content about the event goes here.</p>
+                                </dd>
+
+                                <dt id="event02" class="timeline-event"><a>Another Event</a></dt>
+                                <dd class="timeline-event-content" id="event02EX">
+                                        <p>Content about the other event.</p>
+                                </dd>
+
+                        </dl>
+                </div>
+                <div class="timeline-wrapper">
+                        <h2 class="timeline-time">1984</h2>
+
+                        <dl class="timeline-series">
+
+                                <dt id="event03" class="timeline-event"><a>Yet Another Event</a></dt>
+                                <dd class="timeline-event-content" id="event03EX">
+                                        <p>Content about the event goes here.</p>
+                                </dd>
+
+                        </dl>
+                </div>
+        </div>
+
 
 ##  Important Upgrade Notes
 
@@ -28,9 +80,10 @@ To resolve these changes, you can either update your markup or in most case use 
 
 In addition, note:
 
-*	A timelineContainer must be specified at instantiation
+*       Each major marker tag needs a class of timeline-event
 *	The display:none property from the previous timelineEvent (now timeline-event-ex) element is no longer necessary
-*	The expand/collapse element uses completely new and simplified markup. See the Usage section for details.
+*	The expand/collapse element uses new and simplified markup. See the Usage section for details.
+*       The license has been changed from a _Creative Commons Attribution-ShareAlike 3.0 Unported License_ to a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. I will recognize the original license for version 1.x.
 
 The 2.x changes provide an improved semantic markup. They also other developer to use their own markup structure. Where as version 1.x required the use of dl, dt, dd tags, it is now possible to use your own markup in coordination with the plugin's options.  Other changes were made for the sake of consistency and to simplify future development.
 
@@ -38,7 +91,7 @@ The 2.x changes provide an improved semantic markup. They also other developer t
 *	jQuery
 *	Optional: Jack Moore's ColorBox jQuery plugin
 
-## Usage
+## Detailed Usage Instructions
 1. Include timeliner.css (or timeliner.min.css) and timeliner.js (or timeliner.min.js). Optionally, also include responsive.css for basic responsive behavior on phones and mobile devices below 480px wide (iPad responsive behavior forthcoming).
 
 2. Wrap your timeline in an element with an ID of "timeline" and CLASS of timeline-container. You can set your own container ID using the plugin's options. If you need to use a customized class value as well, update the CSS accordingly.
@@ -75,7 +128,7 @@ The 2.x changes provide an improved semantic markup. They also other developer t
 
 8. Instantiate:
 
-		$.timeliner({timelineContainer: '#timeline'});
+		$.timeliner({});
 
 9. Or, instantiate with multiple timelines:
 
@@ -217,19 +270,18 @@ Using the customization options introduced in v2.0, it's possible to customize t
 In fact, it's possible to use a different markup structure entirely by fully using the v2.0 customization options.
 
 ## Additional Examples
+
 *       http://technotarek.com/timeliner/demo-future/timeliner-future.html
 *	http://www.investigatingpower.org/timelines/mccarthyism/
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Design Recommendations and Showcase
 
-Out of the box, Timeliner.js includes CSS for basic styling. The styling will reflect the [original demo](http://technotarek.com/timeliner/timeliner.html). Aside from the basic layout though (left alignment and left-to-right animations), almost everything can be customized and themed to your needs. Below are a few implementations, some shared with me by users, that show the design capabilities:
+Out of the box, Timeliner.js includes CSS for basic styling. The styling will reflect the [original demo](http://technotarek.com/timeliner/timeliner.html). Aside from the basic layout (left alignment and left-to-right animations), almost everything can be customized and themed to your needs. Below are a few user implementations that show the design flexibility:
 
-*       http://technotarek.com/timeliner/demo-future/timeliner-future.html
 *       http://mfsgmbh.de/typo3/index.php?id=2
 *       http://magicvalley.com/app/projects/BWC/BWC.html
 *       http://justingarver.com/timeline-of-s/
-
 
 ## Change Log
 
@@ -282,6 +334,10 @@ Out of the box, Timeliner.js includes CSS for basic styling. The styling will re
 ###### v1.0 (5/1/2012)
 *	First release
 
+## Accessbility
+
+The original 1.0 version was also fully accessible and 508 compliant as of its original production (mid-2000s). Accessibility technologies have since changed as have coding practices to address accessibility (e.g., the adoption of ARIA). It is recommended that you review your own implementation to ensure accessiblity if that is a requirement of your project. I hope to re-review and update the plugin's native accessiblity at a later date.
+
 ## Roadmap
 
 * Replace ColorBox plugin with alternative
@@ -292,7 +348,17 @@ Out of the box, Timeliner.js includes CSS for basic styling. The styling will re
 ## Credits
 The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
 
+Thanks to on-going development and contributions from the community, timeliner continues to improve. Notable enhancements include basic responsiveness for mobile devices, the ability to add multiple timelines to a single page, and customizable selectors to allow for semantic markup.
+
 The repo is packaged with a version of Jack Moore's ColorBox jQuery plugin (http://www.jacklmoore.com/colorbox). It is for demonstration purposes only. See https://github.com/jackmoore/colorbox for support.
 
-### License
-Timeliner by Tarek Anandan is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. Really all that's important to me is that you try to [let me know](http://www.technotarek.com/contact "contact") if you implement it somewhere so I can take a peek.
+## License
+What's most important to me is that you [let me know](http://www.technotarek.com/contact "contact") if you implement it somewhere so I can take a peek. As of version 2.0, I've changed the license to prohibit commerical usage without my consent. The intent is not to limit a single implementation (e.g,. on a company website), but to prohibit the use and packaging of this plugin within other commercial products (e.g, themes, applications etc).
+
+##### version 2.x+
+Timeliner.js by Tarek Anandan, version 2.x+, is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+![License](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License")
+
+##### version 1.x
+Timeliner.js by Tarek Anandan, version 1.x, is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
