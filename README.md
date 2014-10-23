@@ -246,7 +246,7 @@ The 2.x changes provide an improved semantic markup. They also help other develo
 
 11. Add an expand/collapse all events by adding the following inside of the main #timeline. Use the expandAllText and collapseAllText options to customize this button. You may include more than one expand/collapse button per timeline, such as at the top and bottom of your timeline. When the state of one changes, it will update all others.
 
-		<button class="timelineToggle">+ expand all</button>
+		<button class="timeline-toggle">+ expand all</button>
 
 ## Sample
 
