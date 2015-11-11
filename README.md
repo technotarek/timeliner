@@ -117,9 +117,9 @@ The 2.x changes provide an improved semantic markup. They also help other develo
 
 		<h2 class="timeline-time">1954</h2>
 
-5. Separate the individual events into DL elements with a class of "timeline-event-series". See the options if you need to customize this class value.
+5. Separate the individual events into DL elements with a class of "timeline-series". See the options if you need to customize this class value.
 
-		<dl class="timeline-event-series">
+		<dl class="timeline-series">
 			...
 		</dl>
 
