@@ -20,57 +20,63 @@ http://investigatingpower.org/timelines/civil-rights/
 
 #### Load Plugin and Dependencies
 
-        <link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen">
+```html
+<link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/timeliner.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/timeliner.min.js"></script>
+```
 
 #### Instantiate
 
-        <script>
-                $(document).ready(function() {
-                        $.timeliner({});
-                });
-        </script>
+```html
+<script>
+        $(document).ready(function() {
+                $.timeliner({});
+        });
+</script>
+```
 
 #### Markup
 Using the plugin's defaults and recommended markup, a timeline with two major time markers (1976 and 1984) and a total of three events looks like this:
 
-        <div id="timeline" class="timeline-container">
-                <div class="timeline-wrapper">
-                        <h2 class="timeline-time">1976</h2>
+```html
+<div id="timeline" class="timeline-container">
+        <div class="timeline-wrapper">
+                <h2 class="timeline-time">1976</h2>
 
-                        <dl class="timeline-series">
+                <dl class="timeline-series">
 
-                                <dt class="timeline-event" id="event01"><a>Event</a></dt>
-                                <dd class="timeline-event-content" id="event01EX">
-                                        <p>Content about the event goes here.</p>
-                                </dd>
+                        <dt class="timeline-event" id="event01"><a>Event</a></dt>
+                        <dd class="timeline-event-content" id="event01EX">
+                                <p>Content about the event goes here.</p>
+                        </dd>
 
-                                <dt class="timeline-event" id="event02"><a>Another Event</a></dt>
-                                <dd class="timeline-event-content" id="event02EX">
-                                        <p>Content about the other event.</p>
-                                </dd>
+                        <dt class="timeline-event" id="event02"><a>Another Event</a></dt>
+                        <dd class="timeline-event-content" id="event02EX">
+                                <p>Content about the other event.</p>
+                        </dd>
 
-                        </dl>
-                </div>
-                <div class="timeline-wrapper">
-                        <h2 class="timeline-time">1984</h2>
-
-                        <dl class="timeline-series">
-
-                                <dt class="timeline-event" id="event03"><a>Yet Another Event</a></dt>
-                                <dd class="timeline-event-content" id="event03EX">
-                                        <p>Content about the event goes here.</p>
-                                </dd>
-
-                        </dl>
-                </div>
+                </dl>
         </div>
+        <div class="timeline-wrapper">
+                <h2 class="timeline-time">1984</h2>
+
+                <dl class="timeline-series">
+
+                        <dt class="timeline-event" id="event03"><a>Yet Another Event</a></dt>
+                        <dd class="timeline-event-content" id="event03EX">
+                                <p>Content about the event goes here.</p>
+                        </dd>
+
+                </dl>
+        </div>
+</div>
+```
 
 [Emmet](http://emmet.io/) snippet:
 
-        div#timeline.timeline-container>div.timeline-wrapper>h2.timeline-time+dl.timeline-series>dt.timeline-event#my-event-01+dd.timeline-event-content#my-event-01EX
+    div#timeline.timeline-container>div.timeline-wrapper>h2.timeline-time+dl.timeline-series>dt.timeline-event#my-event-01+dd.timeline-event-content#my-event-01EX
 
 ##  Important Upgrade Notes
 
@@ -103,174 +109,196 @@ The 2.x changes provide an improved semantic markup. They also help other develo
 
 2. Wrap your timeline in an element with an ID of "timeline" and CLASS of timeline-container. You can set your own container ID using the plugin's options. If you need to use a customized class value as well, update the CSS accordingly.
 
-		<div id="timeline" class="timeline-container">
-			...
-		</div>
+```html
+<div id="timeline" class="timeline-container">
+	...
+</div>
+```
 
 3. Separate the major marker content (e.g., content for each century, year, decade etc) into elements with a class of timeline-wrapper. See the options if you need to customize this class value.
 
-		<div class="timeline-wrapper">
-			...
-		</div>
+```html
+<div class="timeline-wrapper">
+	...
+</div>
+```
 
 4. Wrap the major markers in an element with a class of 'timeline-year'. See the options if you need to customize this class value.
 
-		<h2 class="timeline-time">1954</h2>
+```html
+<h2 class="timeline-time">1954</h2>
+```
 
 5. Separate the individual events into DL elements with a class of "timeline-series". See the options if you need to customize this class value.
 
-		<dl class="timeline-series">
-			...
-		</dl>
+```html
+<dl class="timeline-series">
+	...
+</dl>
+```
 
 6. Wrap the title of the individual events in a DT tag surrounding an A tag; give each DT a unique ID and the class of "timeline-event".
 
-		<dt  class="timeline-event" id="19540517"><a>Brown vs Board of Education</a></dt>
+```html
+<dt  class="timeline-event" id="19540517"><a>Brown vs Board of Education</a></dt>
+```
 
 7. Wrap the full event content in a DD tag; give each DD an ID based on the DT with 'EX' appended and a class of 'timeline-event-content'. See the options to customize these values.
 
-		<dd class="timeline-event-content" id="19540517EX">
-			...
-		</dd>
+```html
+<dd class="timeline-event-content" id="19540517EX">
+	...
+</dd>
+```
 
 8. Instantiate:
 
-		$.timeliner({});
+```js
+$.timeliner({});
+```
 
 9. Or, instantiate with multiple timelines:
 
-		$.timeliner({timelineContainer: '#timeline'});
-		$.timeliner({timelineContainer: '#timeline2'});
+```js
+$.timeliner({timelineContainer: '#timeline'});
+$.timeliner({timelineContainer: '#timeline2'});
+```
 
 10. Or, instantiate with options. Use as many or as few as you like. If you're using multiple timelines on a single page, options can be set on each individual timeline.
 
-		$.timeliner({
-                timelineContainer: '#timeline',
-                // Container for the element holding the entire timeline (e.g. a DIV)
-                // value: ID or class selector
-                // default: #timeline
-                // note: must be unique for each timeline on page
+```js
+$.timeliner({
+        timelineContainer: '#timeline',
+        // Container for the element holding the entire timeline (e.g. a DIV)
+        // value: ID or class selector
+        // default: #timeline
+        // note: must be unique for each timeline on page
 
-                timelineSection: '.timeline-wrapper',
-                // Wrapper that contains items under a specific marker (e.g., all of the events under a year on the timeline)
-                // value: class selector
-                // default: .timeline-wrapper
-                // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
+        timelineSection: '.timeline-wrapper',
+        // Wrapper that contains items under a specific marker (e.g., all of the events under a year on the timeline)
+        // value: class selector
+        // default: .timeline-wrapper
+        // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineSectionMarker: '.timeline-time',
-                // Class selector applied to each major item on the timeline, such as each year
-                // value: class selector
-                // default: .timeline-year
+        timelineSectionMarker: '.timeline-time',
+        // Class selector applied to each major item on the timeline, such as each year
+        // value: class selector
+        // default: .timeline-year
 
-                timelineTriggerContainer: '.timeline-series',
-                // Class assigned to wrappers surrounding each individual event
-                // value: selector
-                // default: .timeline-series
-                // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
+        timelineTriggerContainer: '.timeline-series',
+        // Class assigned to wrappers surrounding each individual event
+        // value: selector
+        // default: .timeline-series
+        // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineTriggerAnchor: '.timeline-event',
-                // Element that is wrapped around the event's title; when clicked, expands the event and reveals its full contents
-                // value: class selector
-                // default: .timeline-event
-                // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
+        timelineTriggerAnchor: '.timeline-event',
+        // Element that is wrapped around the event's title; when clicked, expands the event and reveals its full contents
+        // value: class selector
+        // default: .timeline-event
+        // note: changing this tag from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineEventContainer: options['timelineEventContainer'] || 'dt',
-                // Wrapper surrounding a series of events corresponding to the timelineSectionMarker
-                // value: tag or class selector
-                // default: dt
-                // note: When leaving this value at its default, you do not need to apply a class to the dt element if you use the plugins recommended tag structure and markup
-                // note: Change this from the default, perhaps to a class like ".timeline-event", in the case that you do not want to use the plugins recommened markup structure and prefer to use anothe element (e.g, div) instead of a dt tag to mark each event within a series.
-                // note: Changing this value from the default will require modifications to the CSS file in order to retain default styling
+        timelineEventContainer: options['timelineEventContainer'] || 'dt',
+        // Wrapper surrounding a series of events corresponding to the timelineSectionMarker
+        // value: tag or class selector
+        // default: dt
+        // note: When leaving this value at its default, you do not need to apply a class to the dt element if you use the plugins recommended tag structure and markup
+        // note: Change this from the default, perhaps to a class like ".timeline-event", in the case that you do not want to use the plugins recommened markup structure and prefer to use anothe element (e.g, div) instead of a dt tag to mark each event within a series.
+        // note: Changing this value from the default will require modifications to the CSS file in order to retain default styling
 
-                timelineEXContent: '.timeline-event-content',
-                // Element that contains the event's full content to be displayed when event is expanded, an event's expanded ID should alway be on this item
-                // value: class selector
-                // default: .timeline-event-ex
-                // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
+        timelineEXContent: '.timeline-event-content',
+        // Element that contains the event's full content to be displayed when event is expanded, an event's expanded ID should alway be on this item
+        // value: class selector
+        // default: .timeline-event-ex
+        // note: changing this selector from the default will require modifications to the CSS file in order to retain default styling
 
-                EXContentIdSuffix: 'EX',
-                // ID suffix to identify expanded (aka EX) content
-                // value: string
-                // default: EX
+        EXContentIdSuffix: 'EX',
+        // ID suffix to identify expanded (aka EX) content
+        // value: string
+        // default: EX
 
-                oneOpen: false,
-                // sets whether only one item on the timeline can be open at a time. If true, other items will close when one is opened.
-                // value: true | false
-                // default: false
-                // note: does not apply to events identified in startOpen option
+        oneOpen: false,
+        // sets whether only one item on the timeline can be open at a time. If true, other items will close when one is opened.
+        // value: true | false
+        // default: false
+        // note: does not apply to events identified in startOpen option
 
-                startState: options['startState'] || 'closed',
-                // sets whether the timeline is initially collapsed, fully expanded, or "flat" mode
-                // value: closed | open | flat
-                // default: closed
-                // note: setting to "open" makes the startOpen option meaningless
-                // note: flat mode initally collapses the entire timeline except for the major markers
-                // note: the flat state is an initial display option only -- the timeline major markers return to normal before once they've  been opened/displayed
+        startState: options['startState'] || 'closed',
+        // sets whether the timeline is initially collapsed, fully expanded, or "flat" mode
+        // value: closed | open | flat
+        // default: closed
+        // note: setting to "open" makes the startOpen option meaningless
+        // note: flat mode initally collapses the entire timeline except for the major markers
+        // note: the flat state is an initial display option only -- the timeline major markers return to normal before once they've  been opened/displayed
 
-                startOpen: [],
-                // sets the events to display expanded on page load
-                // value: array of IDs of single timelineEvents (e.g., ['#event01'] or ['#event01','#event02'])
-                // default: []
+        startOpen: [],
+        // sets the events to display expanded on page load
+        // value: array of IDs of single timelineEvents (e.g., ['#event01'] or ['#event01','#event02'])
+        // default: []
 
-                baseSpeed: 200,
-                // sets the base speed for animation of an event
-                // value: numeric
-                // default: 200
+        baseSpeed: 200,
+        // sets the base speed for animation of an event
+        // value: numeric
+        // default: 200
 
-                speed: 4,
-                // multiplier applied to the base speed that sets the speed at which an event's contents are displayed and hidden
-                // value: numeric
-                // default: 4
+        speed: 4,
+        // multiplier applied to the base speed that sets the speed at which an event's contents are displayed and hidden
+        // value: numeric
+        // default: 4
 
-                fontOpen: '1.2em',
-                // sets the font size of an event after it is opened
-                // value: any valid CSS font-size value,
-                // default: 1.2em
+        fontOpen: '1.2em',
+        // sets the font size of an event after it is opened
+        // value: any valid CSS font-size value,
+        // default: 1.2em
 
-                fontClosed: '1em',
-                // sets the font size of an event after it is closed
-                // value: any valid CSS font-size value
-                // defaults: 1em
+        fontClosed: '1em',
+        // sets the font size of an event after it is closed
+        // value: any valid CSS font-size value
+        // defaults: 1em
 
-                expandAllText: '+ expand all',
-                // sets the text of the expandAll selector after the timeline is fully collapsed
-                // value: string
-                // default: + expand all
+        expandAllText: '+ expand all',
+        // sets the text of the expandAll selector after the timeline is fully collapsed
+        // value: string
+        // default: + expand all
 
-                collapseAllText: '- collapse all'
-                //sets the text of the expandAll selector after the timeline is fully expanded
-                // value: string
-                // default: - collapse all
+        collapseAllText: '- collapse all'
+        //sets the text of the expandAll selector after the timeline is fully expanded
+        // value: string
+        // default: - collapse all
 
-		});
+});
+```
 
 11. Add an expand/collapse all events by adding the following inside of the main #timeline. Use the expandAllText and collapseAllText options to customize this button. You may include more than one expand/collapse button per timeline, such as at the top and bottom of your timeline. When the state of one changes, it will update all others.
 
-		<button class="timeline-toggle">+ expand all</button>
+```html
+<button class="timeline-toggle">+ expand all</button>
+```
 
 ## Sample
 
 Using the plugins defaults and recommended markup, a timeline with only one time marker and two events would look like this:
 
-	<div id="timeline" class="timeline-container">
-		<div class="timeline-wrapper">
-			<h2 class="timeline-time">1976</h2>
+```html
+<div id="timeline" class="timeline-container">
+	<div class="timeline-wrapper">
+		<h2 class="timeline-time">1976</h2>
 
-			<dl class="timeline-series">
+		<dl class="timeline-series">
 
-				<dt class="timeline-event" id="event01"><a>Event</a></dt>
-				<dd class="timeline-event-content" id="event01EX">
-					<p>Content about the event goes here.</p>
-				</dd>
+			<dt class="timeline-event" id="event01"><a>Event</a></dt>
+			<dd class="timeline-event-content" id="event01EX">
+				<p>Content about the event goes here.</p>
+			</dd>
 
-				<dt class="timeline-event" id="event02"><a>Another Event</a></dt>
-				<dd class="timeline-event-content" id="event02EX">
-					<p>Content about the other event.</p>
-				</dd>
+			<dt class="timeline-event" id="event02"><a>Another Event</a></dt>
+			<dd class="timeline-event-content" id="event02EX">
+				<p>Content about the other event.</p>
+			</dd>
 
-			</dl>
-		</div>
+		</dl>
 	</div>
+</div>
+```
 
 Using the customization options introduced in v2.0, it's possible to customize the tags and class names used by the plugin. For example, the "timeline-time" class applied to the h2 tag can be customized. Perhaps, if you're using the plugin to outline the steps involved in a task (like putting together a piece of furniture), you could use "timeline-step" instead.
 
