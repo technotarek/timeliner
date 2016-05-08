@@ -84,10 +84,10 @@
                 // note: flat mode initally collapses the entire timeline except for the major markers
                 // note: the flat state is an initial display option only -- the timeline major markers return to normal before once they've  been opened/displayed
 
-                startOpen: options['startOpen'] || [],
+                startOpen: options['startOpen'] || ['.start-open'],
                 // sets the events to display expanded on page load
                 // value: array of IDs of single timelineEvents (e.g., ['#event01'] or ['#event01','#event02'])
-                // default: []
+                // default: ['.start-open']
 
                 baseSpeed: options['baseSpeed'] || 200,
                 // sets the base speed for animation of an event
