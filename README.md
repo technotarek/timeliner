@@ -228,13 +228,13 @@ $.timeliner({
         // default: closed
         // note: setting to "open" makes the startOpen option meaningless
         // note: flat mode initally collapses the entire timeline except for the major markers
-        // note: the flat state is an initial display option only -- the timeline major markers return to normal before once they've  been opened/displayed
+        // note: the flat state is an initial display option only -- the timeline major markers return to normal once they've been opened/displayed
 
-        startOpen: [],
+        startOpen: options['startOpen'] || ['.start-open'],
+        // As of version 2.3, you can simply add the "start-open" class to each timeline-event you want to have open by default; see the demo source code or code sample below
         // sets the events to display expanded on page load
-        // As of version 2.3, you can simply add the "start-open" class to the timeline-event element; see the demo source code markup
         // value: array of IDs of single timelineEvents (e.g., ['#event01'] or ['#event01','#event02'])
-        // default: []
+        // default: ['.start-open']
 
         baseSpeed: 200,
         // sets the base speed for animation of an event
@@ -291,7 +291,7 @@ Using the plugins defaults and recommended markup, a timeline with only one time
 				<p>Content about the event goes here.</p>
 			</dd>
 
-			<dt class="timeline-event" id="event02"><a>Another Event</a></dt>
+			<dt class="timeline-event start-open" id="event02"><a>Another Event</a></dt>
 			<dd class="timeline-event-content" id="event02EX">
 				<p>Content about the other event.</p>
 			</dd>
