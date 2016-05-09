@@ -41,7 +41,7 @@
 			<div class="timeline-wrapper">
 				<h2 class="timeline-time"><span>1955</span></h2>
 				<dl class="timeline-series">
-					<dt id="19550828" class="timeline-event"><a>Emmett Till</a></dt>
+					<dt id="19550828" class="timeline-event start-open"><a>Emmett Till</a></dt>
 					<dd class="timeline-event-content" id="19550828EX">
 						<h3>August 28, 1955</h3>
 
@@ -79,7 +79,7 @@
 			<div class="timeline-wrapper">
 				<h2 class="timeline-time"><span>1957</span></h2>
 				<dl class="timeline-series">
-					<dt id="19570904" class="timeline-event"><a>Little Rock</a></dt>
+					<dt id="19570904" class="timeline-event start-open"><a>Little Rock</a></dt>
 					<dd class="timeline-event-content" id="19570904EX">
 						<h3>September 4, 1957</h3>
 
@@ -272,9 +272,7 @@
 	<script type="text/javascript" src="js/timeliner.js"></script>
 	<script>
 		$(document).ready(function() {
-			$.timeliner({
-				startOpen:['#19550828', '#19630828'],
-			});
+			$.timeliner({});
 			$.timeliner({
 				timelineContainer: '#timeline-js',
 				timelineSectionMarker: '.milestone',

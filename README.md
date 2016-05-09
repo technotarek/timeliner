@@ -232,6 +232,7 @@ $.timeliner({
 
         startOpen: [],
         // sets the events to display expanded on page load
+        // As of version 2.3, you can simply add the "start-open" class to the timeline-event element; see the demo source code markup
         // value: array of IDs of single timelineEvents (e.g., ['#event01'] or ['#event01','#event02'])
         // default: []
 
@@ -319,6 +320,9 @@ Out of the box, Timeliner.js includes CSS for basic styling. The styling will re
 *       http://justingarver.com/timeline-of-s/
 
 ## Change Log
+
+###### v2.3 (5/9/2016)
+*       Add ability to set .start-open class on events (resolves #17)
 
 ###### v2.2 (10/12/2014)
 *       Added new "flat" startState which allows for a fully collapsed timeline upon load
