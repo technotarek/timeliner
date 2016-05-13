@@ -1,6 +1,6 @@
 /*
 * Timeliner.js
-* @version      2.3
+* @version      2.31
 * @copyright    Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($) {
@@ -127,8 +127,7 @@
 
                     // first make sure all events in the series are visible (overriding flat mode), then show individual events per option settings
                     $(value).parents(settings.timelineTriggerContainer).show(settings.speed*settings.baseSpeed, function(){
-                        // openEvent($(value).find(settings.timelineTriggerAnchor),$(value+settings.EXContentIdSuffix));
-                        openEvent($(value).find(settings.timelineTriggerAnchor),$(value).next(settings.timelineEXContent));
+                        openEvent($(value),$(value).next(settings.timelineEXContent));
                     });
 
                 });
