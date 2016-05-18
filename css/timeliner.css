@@ -140,3 +140,6 @@
 .timeline-event-content .media a:hover {
   color: #7DBADF;
 }
+.clear {
+  clear: both;
+}

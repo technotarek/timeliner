@@ -71,6 +71,7 @@ Using the plugin's defaults and recommended markup, a timeline with two major ti
 
                 </dl>
         </div>
+    <br class="clear">
 </div>
 ```
 
@@ -298,6 +299,7 @@ Using the plugins defaults and recommended markup, a timeline with only one time
 
 		</dl>
 	</div>
+    <br class="clear">
 </div>
 ```
 
