@@ -313,14 +313,6 @@ In fact, it's possible to use a different markup structure entirely by fully usi
 *	http://www.investigatingpower.org/timelines/mccarthyism/
 *	http://www.ncld-youth.info/index.php?id=61
 
-## Design Recommendations and Showcase
-
-Out of the box, Timeliner.js includes CSS for basic styling. The styling will reflect the [original demo](http://technotarek.com/timeliner/timeliner.html). Aside from the basic layout (left alignment and left-to-right animations), almost everything can be customized and themed to your needs. Below are a few user implementations that show the design flexibility:
-
-*       http://mfsgmbh.de/typo3/index.php?id=2
-*       http://magicvalley.com/app/projects/BWC/BWC.html
-*       http://justingarver.com/timeline-of-s/
-
 ## Change Log
 
 ###### v2.3 (5/9/2016)
