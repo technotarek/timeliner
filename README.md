@@ -309,7 +309,7 @@ In fact, it's possible to use a different markup structure entirely by fully usi
 
 ## Additional Examples
 
-*       http://technotarek.com/timeliner/demo-future/timeliner-future.html
+*   http://technotarek.com/timeliner/demo-future/timeliner-future.html
 *	http://www.investigatingpower.org/timelines/mccarthyism/
 *	http://www.ncld-youth.info/index.php?id=61
 
@@ -377,6 +377,10 @@ The original 1.0 version was also fully accessible and 508 compliant as of its o
 * Improve responsiveness for a variety of device sizes
 * Add easy theming and new visual options
 * Revisit accesibility: add in ARIA and keyboard controls
+
+## Ideas for v3
+
+http://codepen.io/plasm/pen/oZbXmj
 
 ## Credits
 The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
