@@ -23,7 +23,7 @@ http://investigatingpower.org/timelines/civil-rights/
 ```html
 <link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/timeliner.min.js"></script>
 ```
 
@@ -314,6 +314,9 @@ In fact, it's possible to use a different markup structure entirely by fully usi
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Change Log
+
+###### v2.3 (5/12/2017)
+*       Confirmed compatibility with jQuery 3.x. See issue #22.
 
 ###### v2.3 (5/9/2016)
 *       Add ability to set .start-open class on events (resolves #17)
