@@ -8,13 +8,13 @@ Please [drop me a line](http://www.technotarek.com/contact "drop me a line") if 
 ## Demos and Live Implementations
 
 ###### Advanced CSS3 Customization Demo
-http://technotarek.com/timeliner/demo-future/timeliner-future.html
+https://technotarek.com/timeliner/demo-future/timeliner-future.html
+
+###### Implementation with Custom CSS: Investigating Power
+https://investigatingpower.org/civil-rights/
 
 ###### Original Demo
-http://www.technotarek.com/timeliner/timeliner.html
-
-###### Original Implementation: Investigating Power
-http://investigatingpower.org/timelines/civil-rights/
+https://www.technotarek.com/timeliner/timeliner.html
 
 ## Quick Start
 
@@ -106,7 +106,7 @@ The 2.x changes provide an improved semantic markup. They also help other develo
 *	Optional: Jack Moore's ColorBox jQuery plugin
 
 ## Detailed Usage Instructions
-1. Include timeliner.css (or timeliner.min.css) and timeliner.js (or timeliner.min.js). Optionally, also include responsive.css for basic responsive behavior on phones and mobile devices below 480px wide (iPad responsive behavior forthcoming).
+1. Include timeliner.css (or timeliner.min.css) and timeliner.js (or timeliner.min.js). Optionally, also include responsive.css / responsive.min.css for basic responsive behavior on phones and mobile devices below 480px wide (iPad responsive behavior forthcoming).
 
 2. Wrap your timeline in an element with an ID of "timeline" and CLASS of timeline-container. You can set your own container ID using the plugin's options. If you need to use a customized class value as well, update the CSS accordingly.
 
@@ -310,10 +310,13 @@ In fact, it's possible to use a different markup structure entirely by fully usi
 ## Additional Examples
 
 *   http://technotarek.com/timeliner/demo-future/timeliner-future.html
-*	http://www.investigatingpower.org/timelines/mccarthyism/
+*	http://investigatingpower.org/vietnam/
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Change Log
+
+###### v2.3.1 (3/23/2018)
+*       Added minified responsive css file.
 
 ###### v2.3 (5/12/2017)
 *       Confirmed compatibility with jQuery 3.x. See issue #22.
@@ -386,7 +389,7 @@ The original 1.0 version was also fully accessible and 508 compliant as of its o
 http://codepen.io/plasm/pen/oZbXmj
 
 ## Credits
-The content used in the repo and in the demo is from the Investigating Power project (http://www.investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
+The content used in the repo and in the demo is from the Investigating Power project (https://investigatingpower.org), a website which I developed on behalf of author and journalist Charles Lewis.
 
 Thanks to on-going development and contributions from the community, timeliner continues to improve. Notable enhancements include basic responsiveness for mobile devices, the ability to add multiple timelines to a single page, and customizable selectors to allow for semantic markup.
 
