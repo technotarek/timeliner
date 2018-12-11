@@ -309,8 +309,8 @@ In fact, it's possible to use a different markup structure entirely by fully usi
 
 ## Additional Examples
 
-*   http://technotarek.com/timeliner/demo-future/timeliner-future.html
-*	http://investigatingpower.org/vietnam/
+*   https://technotarek.com/timeliner/demo-future/timeliner-future.html
+*	https://investigatingpower.org/vietnam-war/
 *	http://www.ncld-youth.info/index.php?id=61
 
 ## Change Log
